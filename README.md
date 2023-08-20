@@ -1,6 +1,14 @@
 # 全流程训练
 
-## 1.数据配置
+## 1.安装依赖
+
+```python
+conda create -n llm python=3.11
+conda activate llm
+python -m pip install -r requirements.txt
+```
+
+## 2.数据配置
 
 <details>
 <summary>数据集配置、PT、SFT、RW数据格式详细内容</summary>
@@ -81,7 +89,7 @@ Machine learning algorithms build a model based on sample data, known as trainin
   
 </details>
 
-## 2.训练配置
+## 3.训练配置
 
 <details>
 <summary>训练参数与指令</summary>
