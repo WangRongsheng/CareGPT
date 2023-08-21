@@ -108,7 +108,7 @@ accelerate launch src/train_bash.py \
     --stage sft \
     --model_name_or_path ./Llama-2-7b-chat-hf \
     --do_train \
-    --dataset mm,hm \
+    --dataset mm \
     --finetuning_type lora \
     --quantization_bit 4 \
     --overwrite_cache \
