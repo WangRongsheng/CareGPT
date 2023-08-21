@@ -1,13 +1,4 @@
 {
-  "hm": {
-    "file_name": "huatuo-med.json",
-    "columns": {
-      "prompt": "instruction",
-      "query": "",
-      "response": "output",
-      "history": ""
-    }
-  },
   "mm": {
     "file_name": "multi-med.json",
     "columns": {
