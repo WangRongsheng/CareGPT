@@ -220,3 +220,4 @@ python src/web_demo.py \
 - https://github.com/chaoyi-wu/PMC-LLaMA
 - https://github.com/pariskang/CMLM-ZhongJing
 - https://github.com/SupritYoung/Zhongjing
+- https://medical.chat-data.com/
