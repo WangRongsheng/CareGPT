@@ -227,3 +227,4 @@ python src/web_demo.py \
 #### 部署LLM
 - https://github.com/a16z-infra/llama2-chatbot
 - https://github.com/liltom-eth/llama2-webui
+- https://github.com/soulteary/docker-llama2-chat
