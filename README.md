@@ -1,3 +1,13 @@
+# 数据集
+
+#### 预训练数据
+
+#### 监督训练数据
+- [icliniq-10k(en)](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing)
+- [HealthCareMagic-100k (en)](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing)
+
+#### 奖励训练数据
+
 # 全流程训练
 
 ## 1.安装依赖
@@ -132,4 +142,5 @@ accelerate launch src/train_bash.py \
 
 - https://github.com/llSourcell/DoctorGPT
 - https://github.com/facebookresearch/llama-recipes
+- https://github.com/Kent0n-Li/ChatDoctor
 - https://github.com/hiyouga/LLaMA-Efficient-Tuning
