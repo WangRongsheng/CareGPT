@@ -1,4 +1,4 @@
-# 数据集
+# 🎁数据集
 
 #### 预训练数据
 
@@ -8,7 +8,7 @@
 
 #### 奖励训练数据
 
-# 全流程训练
+# 🗜️全流程训练
 
 ## 1.安装依赖
 
@@ -138,7 +138,7 @@ accelerate launch src/train_bash.py \
   
 </details>
 
-# 参考
+# 📚参考
 
 - https://github.com/llSourcell/DoctorGPT
 - https://github.com/facebookresearch/llama-recipes
