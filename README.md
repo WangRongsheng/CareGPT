@@ -21,7 +21,7 @@ python -m pip install -r requirements.txt
 ## 2.数据配置
 
 <details>
-<summary>数据集配置、PT、SFT、RW数据格式详细内容</summary>
+<summary>数据集配置、PT、SFT、RW数据格式</summary>
 
 ### dataset_info
 
@@ -136,6 +136,21 @@ accelerate launch src/train_bash.py \
     --lora_target q_proj,v_proj
 ```
   
+</details>
+
+## 4.推理配置
+
+<details>
+<summary>推理参数与指令</summary>
+
+```python
+python src/web_demo.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --checkpoint_dir output \
+    --finetuning_type lora \
+    --template llama2
+```
+
 </details>
 
 # 📚参考
