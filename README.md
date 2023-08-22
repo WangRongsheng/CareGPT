@@ -143,6 +143,19 @@ accelerate launch src/train_bash.py \
 <details>
 <summary>推理参数与指令</summary>
 
+### 模型导出
+
+```python
+python src/export_model.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --template llama2 \
+    --finetuning_type lora \
+    --checkpoint_dir output \
+    --output_dir output_export
+```
+
+### Web访问
+
 ```python
 python src/web_demo.py \
     --model_name_or_path ./Llama-2-7b-chat-hf \
