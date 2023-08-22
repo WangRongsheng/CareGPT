@@ -230,3 +230,5 @@ python src/web_demo.py \
 - https://github.com/liltom-eth/llama2-webui
 - https://github.com/soulteary/docker-llama2-chat
 - https://huggingface.co/spaces/LinkSoul/Chinese-Llama-2-7b
+
+![](./assets/images/end.png)
