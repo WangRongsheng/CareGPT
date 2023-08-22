@@ -2,11 +2,34 @@
 
 #### 预训练数据
 
+- [LLM-Pretrain-FineTune/data_pretrain](https://github.com/X-jun-0130/LLM-Pretrain-FineTune/tree/main/data_pretrain)
+- [MedicalGPT/pretrain](https://github.com/shibing624/MedicalGPT/tree/main/data/pretrain)
+
 #### 监督训练数据
 - [icliniq-10k(en)](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing)
 - [HealthCareMagic-100k (en)](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing)
+- [ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)
+- [ChatMed_Consult_Dataset](https://huggingface.co/datasets/michaelwzhu/ChatMed_Consult_Dataset)
+- [Chinese-medical-dialogue-data](https://github.com/Toyhom/Chinese-medical-dialogue-data)
+- [cMedQA2](https://github.com/zhangsheng93/cMedQA2)
+- [Huatuo-26M](https://github.com/FreedomIntelligence/Huatuo-26M)
+- [cMedQA2](https://github.com/zhangsheng93/cMedQA2)
+- [webMedQA](https://github.com/hejunqing/webMedQA)
+- [PubMedQA](https://pubmedqa.github.io/)
+- [CMCQA](https://github.com/WENGSYX/CMCQA)
+- [QiZhenGPT](https://github.com/CMKRG/QiZhenGPT/tree/main/data)
+- [LLM-Pretrain-FineTune/data_sft](https://github.com/X-jun-0130/LLM-Pretrain-FineTune/tree/main/data_sft)
+- [Medical-Dialogue-System](https://github.com/UCSD-AI4H/Medical-Dialogue-System)
+- [IMCS-V2](https://github.com/lemuria-wchen/imcs21)
+- [CHIP-MDCFNPC](https://tianchi.aliyun.com/dataset/95414)
+- [MedDG](https://tianchi.aliyun.com/dataset/95414)
+- [HuatuoGPT-sft-data-v1](https://huggingface.co/datasets/FreedomIntelligence/HuatuoGPT-sft-data-v1)
+- [MedicalGPT/finetune](https://github.com/shibing624/MedicalGPT/tree/main/data/finetune)
+- [shibing624/medical](https://huggingface.co/datasets/shibing624/medical)
 
 #### 奖励训练数据
+
+- [MedicalGPT/reward](https://github.com/shibing624/MedicalGPT/tree/main/data/reward)
 
 # 🗜️全流程训练
 
@@ -178,3 +201,15 @@ python src/web_demo.py \
 - https://github.com/facebookresearch/llama-recipes
 - https://github.com/Kent0n-Li/ChatDoctor
 - https://github.com/hiyouga/LLaMA-Efficient-Tuning
+- https://github.com/michael-wzhu/ShenNong-TCM-LLM
+- https://github.com/michael-wzhu/ChatMed
+- https://github.com/SCIR-HI/Huatuo-Llama-Med-Chinese
+- https://github.com/SCIR-HI/Med-ChatGLM
+- https://github.com/xionghonglin/DoctorGLM
+- https://github.com/MediaBrain-SJTU/MING
+- https://github.com/CMKRG/QiZhenGPT
+- https://github.com/NLPxiaoxu/LLM-Pretrain-FineTune
+- https://github.com/scutcyr/BianQue
+- https://github.com/thomas-yanxin/Sunsimiao
+- https://github.com/FreedomIntelligence/HuatuoGPT
+- https://github.com/shibing624/MedicalGPT
