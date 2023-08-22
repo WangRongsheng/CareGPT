@@ -34,6 +34,7 @@
 
 - [MedicalGPT/reward](https://github.com/shibing624/MedicalGPT/tree/main/data/reward)
 - [Zhongjing/rw](https://github.com/SupritYoung/Zhongjing/tree/main/data)
+- [comparison_gpt4_data](https://huggingface.co/datasets/wangrongsheng/comparison_gpt4_data)
 
 # 🗜️全流程训练
 
