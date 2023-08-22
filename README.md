@@ -26,10 +26,13 @@
 - [HuatuoGPT-sft-data-v1](https://huggingface.co/datasets/FreedomIntelligence/HuatuoGPT-sft-data-v1)
 - [MedicalGPT/finetune](https://github.com/shibing624/MedicalGPT/tree/main/data/finetune)
 - [shibing624/medical](https://huggingface.co/datasets/shibing624/medical)
+- [medAlpaca/data](https://github.com/kbressem/medAlpaca#data-overview)
+- [Zhongjing/sft](https://github.com/SupritYoung/Zhongjing/tree/main/data)
 
 #### 奖励训练数据
 
 - [MedicalGPT/reward](https://github.com/shibing624/MedicalGPT/tree/main/data/reward)
+- [Zhongjing/rw](https://github.com/SupritYoung/Zhongjing/tree/main/data)
 
 # 🗜️全流程训练
 
@@ -211,5 +214,9 @@ python src/web_demo.py \
 - https://github.com/NLPxiaoxu/LLM-Pretrain-FineTune
 - https://github.com/scutcyr/BianQue
 - https://github.com/thomas-yanxin/Sunsimiao
+- https://github.com/kbressem/medAlpaca
 - https://github.com/FreedomIntelligence/HuatuoGPT
 - https://github.com/shibing624/MedicalGPT
+- https://github.com/chaoyi-wu/PMC-LLaMA
+- https://github.com/pariskang/CMLM-ZhongJing
+- https://github.com/SupritYoung/Zhongjing
