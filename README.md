@@ -201,6 +201,7 @@ python src/web_demo.py \
 
 # 📚参考
 
+#### 医学LLM
 - https://github.com/llSourcell/DoctorGPT
 - https://github.com/facebookresearch/llama-recipes
 - https://github.com/Kent0n-Li/ChatDoctor
@@ -222,3 +223,6 @@ python src/web_demo.py \
 - https://github.com/pariskang/CMLM-ZhongJing
 - https://github.com/SupritYoung/Zhongjing
 - https://medical.chat-data.com/
+
+#### 部署LLM
+- https://github.com/a16z-infra/llama2-chatbot
