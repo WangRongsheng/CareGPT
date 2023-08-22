@@ -153,6 +153,12 @@ python src/web_demo.py \
 
 </details>
 
+# 🧰模型开源
+
+|权重介绍|下载地址|特点|
+|:-|:-|:-|
+|多轮对话数据基于LLaMa-7b-chat训练而来|[CareLlama2-7b-chat-sft-multi](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-multi)|出色的多轮对话能力|
+
 # 📚参考
 
 - https://github.com/llSourcell/DoctorGPT
