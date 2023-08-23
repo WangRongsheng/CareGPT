@@ -29,6 +29,12 @@
 - [shibing624/medical](https://huggingface.co/datasets/shibing624/medical)
 - [medAlpaca/data](https://github.com/kbressem/medAlpaca#data-overview)
 - [Zhongjing/sft](https://github.com/SupritYoung/Zhongjing/tree/main/data)
+- [medical_dialog](https://huggingface.co/datasets/medical_dialog)
+- [huatuo_encyclopedia_qa](https://huggingface.co/datasets/FreedomIntelligence/huatuo_encyclopedia_qa)
+- [Chinese-medical-dialogue-data](https://huggingface.co/datasets/BillGPT/Chinese-medical-dialogue-data)
+- [Med-ChatGLM/data](https://github.com/SCIR-HI/Med-ChatGLM/tree/main/data)
+- [CMB](https://github.com/FreedomIntelligence/CMB)
+- [GenMedGPT-5k](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing)
 
 #### 奖励训练数据
 
@@ -231,5 +237,9 @@ python src/web_demo.py \
 - https://github.com/liltom-eth/llama2-webui
 - https://github.com/soulteary/docker-llama2-chat
 - https://huggingface.co/spaces/LinkSoul/Chinese-Llama-2-7b
+
+#### LLM资源
+- https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
+- https://github.com/WangRongsheng/MedQA-ChatGLM
 
 ![](./assets/images/end.png)
