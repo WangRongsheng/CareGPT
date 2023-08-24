@@ -1,0 +1,8 @@
+accelerate==0.21.0
+bitsandbytes==0.40.2
+gradio==3.37.0
+protobuf==3.20.3
+scipy==1.11.1
+sentencepiece==0.1.99
+torch==2.0.1
+transformers==4.31.0
