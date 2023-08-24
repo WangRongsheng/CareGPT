@@ -6,6 +6,9 @@
   <p align="center">
     <h3> CareLlama (关怀羊驼)：医疗LLM，开源驱动，共创健康未来 </h3>
     <p align="center">
+      <em>开源模型 / 丰富数据 / 高效部署 / LLaMA</em>
+    </p>
+    <p align="center">
       <a href="https://github.com/WangRongsheng/CareLlama/blob/main/LICENSE">
         <img alt="GitHub Contributors" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" />
       </a>
@@ -27,8 +30,6 @@
 <!--center><kbd><img src="./docs/images/usage.png" height="550px"/></kbd></center-->
 
 <p align="center">
-      <em>开源模型 / 丰富数据 / 高效部署 / LLaMA</em>
-      <br/>
       <a href="#"><strong>视频教程</strong></a>
       <a href="#"><strong>安装部署</strong></a>
       <a href="#"><strong>在线体验</strong></a>
