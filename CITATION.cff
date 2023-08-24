@@ -1,0 +1,12 @@
+cff-version: 1.0.0
+title: CareLlama
+message: >-
+  If you use this software, please cite it using these
+  metadata.
+type: software
+authors:
+  - given-names: Rongsheng Wang
+repository-code: 'https://github.com/WangRongsheng/CareLlama'
+url: 'https://github.com/WangRongsheng/CareLlama'
+abstract: Medical LLM, Open Source Driven for a Healthy Future.
+license: CC BY-NC-SA 4.0
