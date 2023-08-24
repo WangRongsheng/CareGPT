@@ -27,11 +27,11 @@
 <!--center><kbd><img src="./docs/images/usage.png" height="550px"/></kbd></center-->
 
 <p align="center">
-      <em>一站式服务 / 简单 / 快速 / 高效 / 智能</em>
+      <em>开源模型 / 丰富数据 / 高效部署 / LLaMA</em>
       <br/>
       <a href="#"><strong>视频教程</strong></a>
-      <a href="https://github.com/WangRongsheng/ChatGenTitle/releases/tag/LLaMa-Lora-7B-cs-6-new-app"><strong>安装部署</strong></a>
-      <a href="https://drive.google.com/file/d/1akrC4-YnYdiyD1_VK-92hncN7HS0FLf5/view?usp=sharing" target="_parent"><strong>在线体验</strong></a>
+      <a href="#"><strong>安装部署</strong></a>
+      <a href="#"><strong>在线体验</strong></a>
 </p>
 
 
