@@ -206,6 +206,26 @@ python src/web_demo.py \
     --template llama2
 ```
 
+### API访问
+
+```python
+python src/api_demo.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --checkpoint_dir output \
+    --finetuning_type lora \
+    --template llama2
+```
+
+### CLI访问
+
+```python
+python src/cli_demo.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --checkpoint_dir output \
+    --finetuning_type lora \
+    --template llama2
+```
+
 </details>
 
 # 💫
