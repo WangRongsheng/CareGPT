@@ -9,9 +9,19 @@
       <em>开源模型 / 丰富数据 / 高效部署 / LLaMA</em>
     </p>
     <p align="center">
-      <a href="https://github.com/WangRongsheng/CareLlama/blob/main/LICENSE">
-        <img alt="GitHub Contributors" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" />
+      <a href='https://github.com/WangRongsheng/CareLlama'>
+            <img src='https://img.shields.io/badge/Project-Page-Green'>
       </a>
+      <a href='https://github.com/WangRongsheng/CareLlama'>
+            <img src='https://img.shields.io/badge/Paper-Arxiv-red'>
+      </a>
+      <a href="https://colab.research.google.com/drive/1aR8SSaseyprsxnor-gDyMo96V9jD7iGP?usp=sharing">
+        <img alt="GitHub Contributors" src="https://colab.research.google.com/assets/colab-badge.svg" />
+      </a>
+      <a href='https://huggingface.co/wangrongsheng'>
+        <img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue'>
+      </a>
+      </br>
       <a href="https://github.com/WangRongsheng/CareLlama/graphs/contributors">
         <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/WangRongsheng/CareLlama" />
       </a>
@@ -21,8 +31,21 @@
       <a href="https://github.com/WangRongsheng/CareLlama/pulls">
         <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/WangRongsheng/CareLlama?color=0088ff" />
       </a>
-      <a href=href="https://github.com/kaixindelele/CareLlama/stargazers">
+      <a href=href="https://github.com/WangRongsheng/CareLlama/stargazers">
         <img src="https://img.shields.io/github/stars/WangRongsheng/CareLlama?color=ccf">
+      </a>
+      <a href=href="https://github.com/WangRongsheng/CareLlama">
+        <img src="https://img.shields.io/github/repo-size/WangRongsheng/CareLlama.svg?style=flat-square">
+      </a>
+      </br>
+      <a href=href="https://github.com/WangRongsheng/CareLlama">
+        <img src="https://visitor-badge.laobi.icu/badge?page_id=https://github.com/WangRongsheng/CareLlama">
+      </a>
+      <a href=href="https://github.com/WangRongsheng/CareLlama">
+        <img src="https://img.shields.io/github/last-commit/WangRongsheng/CareLlama">
+      </a>
+      <a href="https://github.com/WangRongsheng/CareLlama/blob/main/LICENSE">
+        <img alt="GitHub Contributors" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" />
       </a>
   </p>
 </div>
@@ -35,6 +58,7 @@
       <a href="#"><strong>在线体验</strong></a>
 </p>
 
+![](./assets/images/hx.png)
 
 # 🎁数据集
 
