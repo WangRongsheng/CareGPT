@@ -208,12 +208,20 @@ python src/web_demo.py \
 
 </details>
 
+# 💫
+
 # 🧰模型开源
 
 |阶段|权重介绍|下载地址|特点|底座模型|
 |:-|:-|:-|:-|:-|
 |监督微调|多轮对话数据基于LLaMA2-7b-Chat训练而来|[CareLlama2-7b-chat-sft-multi](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-multi)|出色的多轮对话能力|LLaMA2-7b-Chat|
 |监督微调|丰富高效医患对话数据基于LLaMA2-7b-Chat训练而来|[CareLlama2-7b-chat-sft-med](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-med)|出色的患者疾病诊断能力|LLaMA2-7b-Chat|
+
+> *使用方法*：
+> 1. 下载相应的底座模型；
+> 2. 如果为LLaMA则转为HF格式，如果LLaMA-2且下载的为HF格式则不需要转化；
+> 3. 下载上述你想要加载的权重；
+> 4. 根据[推理配置](https://github.com/WangRongsheng/CareLlama/tree/main#4%E6%8E%A8%E7%90%86%E9%85%8D%E7%BD%AE)开始使用我们的模型；
 
 # 📚参考
 
