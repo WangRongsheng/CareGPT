@@ -1,3 +1,40 @@
+<div align="center">
+  <a href="https://github.com/WangRongsheng/ChatGenTitle">
+    <img src="https://github.com/WangRongsheng/ChatGenTitle/blob/main/docs/images/logo.png" alt="Logo" height="180">
+  </a>
+
+  <p align="center">
+    <h3> ChatGenTitle：使用百万arXiv论文信息在LLaMA模型上进行微调的论文题目生成模型 </h3>
+    <p align="center">
+      <a href="https://github.com/WangRongsheng/CareLlama/blob/main/LICENSE">
+        <img alt="GitHub Contributors" src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" />
+      </a>
+      <a href="https://github.com/WangRongsheng/CareLlama/graphs/contributors">
+        <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/WangRongsheng/CareLlama" />
+      </a>
+      <a href="https://github.com/WangRongsheng/CareLlama/issues">
+        <img alt="Issues" src="https://img.shields.io/github/issues/WangRongsheng/CareLlama?color=0088ff" />
+      </a>
+      <a href="https://github.com/WangRongsheng/CareLlama/pulls">
+        <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/WangRongsheng/CareLlama?color=0088ff" />
+      </a>
+      <a href=href="https://github.com/kaixindelele/CareLlama/stargazers">
+        <img src="https://img.shields.io/github/stars/WangRongsheng/CareLlama?color=ccf">
+      </a>
+  </p>
+</div>
+
+<center><kbd><img src="./docs/images/usage.png" height="550px"/></kbd></center>
+
+<p align="center">
+      <em>一站式服务 / 简单 / 快速 / 高效 / 智能</em>
+      <br/>
+      <a href="#"><strong>视频教程</strong></a>
+      <a href="https://github.com/WangRongsheng/ChatGenTitle/releases/tag/LLaMa-Lora-7B-cs-6-new-app"><strong>安装部署</strong></a>
+      <a href="https://drive.google.com/file/d/1akrC4-YnYdiyD1_VK-92hncN7HS0FLf5/view?usp=sharing" target="_parent"><strong>在线体验</strong></a>
+</p>
+
+
 # 🎁数据集
 
 #### 预训练数据
