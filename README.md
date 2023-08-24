@@ -363,7 +363,7 @@ python app.py
 
 > *使用方法*：
 > 1. 下载相应的底座模型；
-> 2. 如果为LLaMA则转为HF格式，如果LLaMA-2且下载的为HF格式则不需要转化；
+> 2. 如果为LLaMA则[转为HF格式](https://github.com/WangRongsheng/CareLlama#1%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96)，如果为LLaMA-2且下载的为HF格式则不需要转化；
 > 3. 下载上述你想要加载的权重；
 > 4. 根据[推理配置](https://github.com/WangRongsheng/CareLlama/tree/main#4%E6%8E%A8%E7%90%86%E9%85%8D%E7%BD%AE)开始使用我们的模型；
 
