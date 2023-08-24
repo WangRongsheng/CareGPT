@@ -52,6 +52,9 @@ conda activate llm
 python -m pip install -r requirements.txt
 ```
 
+- LLaMA模型下载：https://blog.csdn.net/u014297502/article/details/129829677
+- LLaMA-2模型下载：https://huggingface.co/meta-llama
+
 ## 2.数据配置
 
 <details>
