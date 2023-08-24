@@ -243,6 +243,25 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
     --predict_with_generate
 ```
 
+### 实验评估(BLEU和ROUGE_CHINESE)
+
+```python
+CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
+    --stage sft \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --do_eval \
+    --dataset mm \
+    --template llama2 \
+    --finetuning_type lora \
+    --checkpoint_dir output \
+    --output_dir eval_output \
+    --per_device_eval_batch_size 8 \
+    --max_samples 100 \
+    --predict_with_generate
+```
+
+在4/8-bit评估时，推荐使用`--per_device_eval_batch_size=1`和`--max_target_length 128`
+
 </details>
 
 # 💫
