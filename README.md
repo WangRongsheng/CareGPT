@@ -317,6 +317,9 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 
 ## 5.Gradio部署
 
+<details>
+<summary>Gradio部署指令</summary>
+
 ### 模型导出
 
 ```python
@@ -328,10 +331,14 @@ python src/export_model.py \
     --output_dir output_export
 ```
 
+### 开启运行
+
 ```python
 %cd Gradio
 python app.py
 ```
+
+</details>
 
 ![](./Gradio/gradio-demo.png)
 
