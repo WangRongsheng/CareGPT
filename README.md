@@ -247,17 +247,6 @@ accelerate launch src/train_bash.py \
 <details>
 <summary>推理参数与指令</summary>
 
-### 模型导出
-
-```python
-python src/export_model.py \
-    --model_name_or_path ./Llama-2-7b-chat-hf \
-    --template llama2 \
-    --finetuning_type lora \
-    --checkpoint_dir output \
-    --output_dir output_export
-```
-
 ### Web访问
 
 ```python
@@ -325,6 +314,26 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 在4/8-bit评估时，推荐使用`--per_device_eval_batch_size=1`和`--max_target_length 128`
 
 </details>
+
+## 5.Gradio部署
+
+### 模型导出
+
+```python
+python src/export_model.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --template llama2 \
+    --finetuning_type lora \
+    --checkpoint_dir output \
+    --output_dir output_export
+```
+
+```python
+%cd Gradio
+python app.py
+```
+
+![](./Gradio/gradio-demo.png)
 
 # 💫实践经验
 
