@@ -226,6 +226,23 @@ python src/cli_demo.py \
     --template llama2
 ```
 
+### 批量预测
+
+```python
+CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
+    --stage sft \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --do_predict \
+    --dataset mm \
+    --template llama2 \
+    --finetuning_type lora \
+    --checkpoint_dir output \
+    --output_dir predict_output \
+    --per_device_eval_batch_size 8 \
+    --max_samples 100 \
+    --predict_with_generate
+```
+
 </details>
 
 # 💫
