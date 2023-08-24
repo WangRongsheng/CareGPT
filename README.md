@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/WangRongsheng/ChatGenTitle">
-    <img src="https://github.com/WangRongsheng/ChatGenTitle/blob/main/docs/images/logo.png" alt="Logo" height="180">
+    <img src="https://github.com/WangRongsheng/CareLlama/blob/main/assets/images/home.png" alt="Logo" height="280">
   </a>
 
   <p align="center">
@@ -24,7 +24,7 @@
   </p>
 </div>
 
-<center><kbd><img src="./docs/images/usage.png" height="550px"/></kbd></center>
+<!--center><kbd><img src="./docs/images/usage.png" height="550px"/></kbd></center-->
 
 <p align="center">
       <em>一站式服务 / 简单 / 快速 / 高效 / 智能</em>
