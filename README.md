@@ -355,7 +355,7 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 如果你使用了本项目的模型，数据或者代码，请声明引用：
 ```
 @misc{wang2023carellama,
-      title={CareLlama}, 
+      title={CareLlama: Medical LLM, Open Source Driven for a Healthy Future}, 
       author={Rongsheng Wang},
       year={2023},
       publisher = {GitHub},
