@@ -53,6 +53,11 @@ python -m pip install -r requirements.txt
 ```
 
 - LLaMA模型下载：https://blog.csdn.net/u014297502/article/details/129829677
+```python
+# 转为HF格式
+python -m transformers.models.llama.convert_llama_weights_to_hf \
+    --input_dir path_to_llama_weights --model_size 7B --output_dir path_to_llama_model
+```
 - LLaMA-2模型下载：https://huggingface.co/meta-llama
 
 ## 2.数据配置
