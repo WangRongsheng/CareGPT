@@ -15,7 +15,7 @@
       <a href='https://github.com/WangRongsheng/CareLlama'>
             <img src='https://img.shields.io/badge/Paper-Arxiv-red'>
       </a>
-      <a href="https://colab.research.google.com/drive/1aR8SSaseyprsxnor-gDyMo96V9jD7iGP?usp=sharing">
+      <a href="#">
         <img alt="GitHub Contributors" src="https://colab.research.google.com/assets/colab-badge.svg" />
       </a>
       <a href='https://huggingface.co/wangrongsheng'>
