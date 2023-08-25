@@ -1,3 +1,7 @@
+> **Note**
+>
+> 在线体验CareLlama：https://huggingface.co/spaces/wangrongsheng/CareLlama
+
 <div align="center">
   <a href="https://github.com/WangRongsheng/ChatGenTitle">
     <img src="https://github.com/WangRongsheng/CareLlama/blob/main/assets/images/home.png" alt="Logo" height="280">
