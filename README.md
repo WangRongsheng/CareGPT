@@ -431,5 +431,6 @@ python app.py
 - https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
 - https://github.com/WangRongsheng/MedQA-ChatGLM
 - https://github.com/WangRongsheng/Use-LLMs-in-Colab
+- https://github.com/HqWu-HITCS/Awesome-Chinese-LLM
 
 ![](./assets/images/end.png)
