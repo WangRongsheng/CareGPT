@@ -424,6 +424,8 @@ python app.py
 - https://github.com/liltom-eth/llama2-webui
 - https://github.com/soulteary/docker-llama2-chat
 - https://huggingface.co/spaces/LinkSoul/Chinese-Llama-2-7b
+- https://github.com/mushan0x0/AI0x0.com
+- https://github.com/Yidadaa/ChatGPT-Next-Web
 
 #### LLM资源
 - https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
