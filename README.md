@@ -226,6 +226,7 @@ accelerate launch src/train_bash.py # arguments (same as above)
 ### 监督训练
 
 ```python
+# LLaMA-2
 accelerate launch src/train_bash.py \
     --stage sft \
     --model_name_or_path ./Llama-2-7b-chat-hf \
@@ -246,6 +247,27 @@ accelerate launch src/train_bash.py \
     --fp16 \
     --template llama2 \
     --lora_target q_proj,v_proj
+
+# LLaMA
+accelerate launch src/train_bash.py \
+    --stage sft \
+    --model_name_or_path ./Llama-7b-hf \
+    --do_train \
+    --dataset mm,hm \
+    --finetuning_type lora \
+    --overwrite_cache \
+    --output_dir output-1 \
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 4 \
+    --lr_scheduler_type cosine \
+    --logging_steps 10 \
+    --save_steps 2000 \
+    --learning_rate 5e-5 \
+    --num_train_epochs 2.0 \
+    --plot_loss \
+    --fp16 \
+    --template default \
+    --lora_target q_proj,v_proj
 ```
   
 </details>
@@ -258,11 +280,19 @@ accelerate launch src/train_bash.py \
 ### Web访问
 
 ```python
+# LLaMA-2
 python src/web_demo.py \
     --model_name_or_path ./Llama-2-7b-chat-hf \
     --checkpoint_dir output \
     --finetuning_type lora \
     --template llama2
+
+# LLaMA
+python src/web_demo.py \
+    --model_name_or_path ./Llama-7b-hf \
+    --checkpoint_dir output-1 \
+    --finetuning_type lora \
+    --template default
 ```
 
 ### API访问
