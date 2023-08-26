@@ -544,6 +544,16 @@ python src/api_demo.py \
 
 此存储库遵循[CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) ，请参阅许可条款。
 
+# 🎗️赞助支持
+
+如果觉得这个软件对你有所帮助并且您想要支持我们的工作，您可以通过以下方式（**请备注您的微信给我们**）：
+
+|||
+|:-|:-|
+|<img src="./assets/support/wx.jpg" width="200" />|<img src="./assets/support/zfb.jpg" width="200" />|
+
+您的支持将是我们继续探索LLM的动力，所有的支持将用于模型的推理部署以及部分的训练任务中。
+
 # 📚项目参考
 
 #### 医学LLM
