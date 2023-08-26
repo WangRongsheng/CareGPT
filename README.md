@@ -59,7 +59,7 @@
 <p align="center">
       <a href="#"><strong>视频教程</strong></a>
       <a href="#"><strong>安装部署</strong></a>
-      <a href="#"><strong>在线体验</strong></a>
+      <a href="https://huggingface.co/spaces/wangrongsheng/CareLlama"><strong>在线体验</strong></a>
 </p>
 
 ![](./assets/images/hx.png)
