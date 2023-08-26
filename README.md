@@ -435,6 +435,51 @@ python app.py
 
 ![](./Gradio/gradio-demo.png)
 
+## 6.[ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web)部署
+
+<details>
+<summary>Next部署指令</summary>
+
+### 模型导出
+
+```python
+# LLaMA-2
+python src/api_demo.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --checkpoint_dir output \
+    --finetuning_type lora \
+    --template llama2
+
+# LLaMA
+python src/api_demo.py \
+    --model_name_or_path ./Llama-7b-hf \
+    --checkpoint_dir output-1 \
+    --finetuning_type lora \
+    --template default
+```
+
+### 下载Next并运行
+
+1. 下载Next：
+[![Web][Web-image]][web-url]
+[![Windows][Windows-image]][download-url]
+[![MacOS][MacOS-image]][download-url]
+[![Linux][Linux-image]][download-url]
+
+[web-url]: https://chatgpt.nextweb.fun
+[download-url]: https://github.com/Yidadaa/ChatGPT-Next-Web/releases
+[Web-image]: https://img.shields.io/badge/Web-PWA-orange?logo=microsoftedge
+[Windows-image]: https://img.shields.io/badge/-Windows-blue?logo=windows
+[MacOS-image]: https://img.shields.io/badge/-MacOS-black?logo=apple
+[Linux-image]: https://img.shields.io/badge/-Linux-333?logo=ubuntu
+
+2. 修改配置：
+安装并打开Next，然后打开`设置`，修改`接口地址`为：`http://127.0.0.1:8000/`（即你的API接口地址），然后就可以使用了。
+
+</details>
+
+![](./Next/chatgpt-next-web.png)
+
 # 💫实践经验
 
 1. 在CareLlama中并未对分词模型进行中文分词的添加和重新训练，但是效果依旧表现可喜；
