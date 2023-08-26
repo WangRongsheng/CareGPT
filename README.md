@@ -298,26 +298,43 @@ python src/web_demo.py \
 ### API访问
 
 ```python
+# LLaMA-2
 python src/api_demo.py \
     --model_name_or_path ./Llama-2-7b-chat-hf \
     --checkpoint_dir output \
     --finetuning_type lora \
     --template llama2
+
+# LLaMA
+python src/api_demo.py \
+    --model_name_or_path ./Llama-7b-hf \
+    --checkpoint_dir output-1 \
+    --finetuning_type lora \
+    --template default
 ```
 
 ### CLI访问
 
 ```python
+# LLaMA-2
 python src/cli_demo.py \
     --model_name_or_path ./Llama-2-7b-chat-hf \
     --checkpoint_dir output \
     --finetuning_type lora \
     --template llama2
+
+# LLaMA
+python src/cli_demo.py \
+    --model_name_or_path ./Llama-7b-hf \
+    --checkpoint_dir output-1 \
+    --finetuning_type lora \
+    --template default
 ```
 
 ### 批量预测
 
 ```python
+# LLaMA-2
 CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
     --stage sft \
     --model_name_or_path ./Llama-2-7b-chat-hf \
@@ -330,11 +347,26 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
     --per_device_eval_batch_size 8 \
     --max_samples 100 \
     --predict_with_generate
+
+# LLaMA
+CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
+    --stage sft \
+    --model_name_or_path ./Llama-7b-hf \
+    --do_predict \
+    --dataset mm \
+    --template default \
+    --finetuning_type lora \
+    --checkpoint_dir output-1 \
+    --output_dir predict_output \
+    --per_device_eval_batch_size 8 \
+    --max_samples 100 \
+    --predict_with_generate
 ```
 
 ### 实验评估(BLEU和ROUGE_CHINESE)
 
 ```python
+# LLaMA-2
 CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
     --stage sft \
     --model_name_or_path ./Llama-2-7b-chat-hf \
@@ -343,6 +375,20 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
     --template llama2 \
     --finetuning_type lora \
     --checkpoint_dir output \
+    --output_dir eval_output \
+    --per_device_eval_batch_size 8 \
+    --max_samples 100 \
+    --predict_with_generate
+
+# LLaMA
+CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
+    --stage sft \
+    --model_name_or_path ./Llama-7b-hf \
+    --do_eval \
+    --dataset mm \
+    --template default \
+    --finetuning_type lora \
+    --checkpoint_dir output-1 \
     --output_dir eval_output \
     --per_device_eval_batch_size 8 \
     --max_samples 100 \
@@ -361,11 +407,20 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 ### 模型导出
 
 ```python
+# LLaMA-2
 python src/export_model.py \
-    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --model_name_or_path ./Llama-7b-hf \
     --template llama2 \
     --finetuning_type lora \
     --checkpoint_dir output \
+    --output_dir output_export
+
+# LLaMA
+python src/export_model.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --template default \
+    --finetuning_type lora \
+    --checkpoint_dir output-1 \
     --output_dir output_export
 ```
 
