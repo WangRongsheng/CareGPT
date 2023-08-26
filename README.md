@@ -58,7 +58,7 @@
 
 <p align="center">
       <a href="#"><strong>视频教程</strong></a>
-      <a href="#"><strong>安装部署</strong></a>
+      <a href="https://github.com/WangRongsheng/CareLlama/tree/main#5gradio%E9%83%A8%E7%BD%B2"><strong>安装部署</strong></a>
       <a href="https://huggingface.co/spaces/wangrongsheng/CareLlama"><strong>在线体验</strong></a>
 </p>
 
