@@ -6,6 +6,8 @@ message: >-
 type: software
 authors:
   - given-names: Rongsheng Wang
+  - given-names: Ruizhe Zhou
+  - given-names: Haoming Chen
   - given-names: Tao Tan
 repository-code: 'https://github.com/WangRongsheng/CareLlama'
 url: 'https://github.com/WangRongsheng/CareLlama'
