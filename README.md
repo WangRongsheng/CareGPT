@@ -400,7 +400,7 @@ python app.py
 ```
 @misc{wang2023carellama,
       title={CareLlama: Medical LLM, Open Source Driven for a Healthy Future}, 
-      author={Rongsheng Wang},
+      author={Rongsheng Wang, Tao Tan},
       year={2023},
       publisher = {GitHub},
       journal = {GitHub repository},
