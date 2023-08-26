@@ -440,7 +440,7 @@ python app.py
 <details>
 <summary>Next部署指令</summary>
 
-### 模型导出
+### 开启API服务
 
 ```python
 # LLaMA-2
