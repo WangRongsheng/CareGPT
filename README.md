@@ -542,7 +542,7 @@ python src/api_demo.py \
 
 # 🔔使用许可
 
-此存储库遵循[CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/) ，请参阅许可条款。
+此存储库遵循[MIT License](https://github.com/WangRongsheng/CareLlama/blob/main/LICENSE) ，请参阅许可条款。
 
 # 🎗️赞助支持
 
