@@ -6,6 +6,7 @@ message: >-
 type: software
 authors:
   - given-names: Rongsheng Wang
+  - given-names: Tao Tan
 repository-code: 'https://github.com/WangRongsheng/CareLlama'
 url: 'https://github.com/WangRongsheng/CareLlama'
 abstract: Medical LLM, Open Source Driven for a Healthy Future.
