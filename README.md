@@ -560,7 +560,6 @@ python src/api_demo.py \
 - https://github.com/llSourcell/DoctorGPT
 - https://github.com/facebookresearch/llama-recipes
 - https://github.com/Kent0n-Li/ChatDoctor
-- https://github.com/hiyouga/LLaMA-Efficient-Tuning
 - https://github.com/michael-wzhu/ShenNong-TCM-LLM
 - https://github.com/michael-wzhu/ChatMed
 - https://github.com/SCIR-HI/Huatuo-Llama-Med-Chinese
@@ -591,7 +590,9 @@ python src/api_demo.py \
 #### LLM资源
 - https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
 - https://github.com/WangRongsheng/MedQA-ChatGLM
+- https://github.com/hiyouga/LLaMA-Efficient-Tuning
 - https://github.com/WangRongsheng/Use-LLMs-in-Colab
 - https://github.com/HqWu-HITCS/Awesome-Chinese-LLM
+
 
 ![](./assets/images/end.png)
