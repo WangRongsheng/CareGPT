@@ -127,7 +127,7 @@ with gr.Blocks(css='style.css') as demo:
             minimum=0.1,
             maximum=4.0,
             step=0.1,
-            value=1.0,
+            value=0.1,
         )
         top_p = gr.Slider(
             label='Top-p (nucleus sampling)',
