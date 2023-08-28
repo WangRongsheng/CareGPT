@@ -320,6 +320,13 @@ python src/web_demo.py \
     --checkpoint_dir output-1 \
     --finetuning_type lora \
     --template default
+
+# DPO
+python src/web_demo.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --checkpoint_dir output-dpo \
+    --finetuning_type lora \
+    --template llama2
 ```
 
 ### API访问
@@ -338,6 +345,13 @@ python src/api_demo.py \
     --checkpoint_dir output-1 \
     --finetuning_type lora \
     --template default
+
+# DPO
+python src/api_demo.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --checkpoint_dir output-dpo \
+    --finetuning_type lora \
+    --template llama2
 ```
 
 ### CLI访问
@@ -356,6 +370,13 @@ python src/cli_demo.py \
     --checkpoint_dir output-1 \
     --finetuning_type lora \
     --template default
+
+# DPO
+python src/cli_demo.py \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --checkpoint_dir output-dpo \
+    --finetuning_type lora \
+    --template llama2
 ```
 
 ### 批量预测
@@ -524,6 +545,7 @@ python src/api_demo.py \
 |监督微调|丰富高效医患对话数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-chat-sft-med](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-med)|出色的患者疾病诊断能力|LLaMA2-7b-Chat|QLoRA|
 |监督微调|混合数据基于LLaMA-7b训练而来|[⚙️CareLlama1-7b-merge](https://huggingface.co/wangrongsheng/CareLlama1-7b-merge)|更出色的医疗对话能力|LLaMA-7b|LoRA|
 |监督微调|混合数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-merge](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge)、[🧰CareLlama2-7b-merge-mix](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge-mix)|更出色的医疗对话能力|LLaMA2-7b-Chat|QLoRA|
+|DPO||[⚙️CareLlama2-7b-merge-dpo](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge-dpo)||LLaMA2-7b-Chat|QLoRA|
 
 > **Note**
 >
