@@ -354,6 +354,27 @@ python src/api_demo.py \
     --template llama2
 ```
 
+测试API：
+```python
+curl -X 'POST' \
+    'http://127.0.0.1:8888/v1/chat/completions' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "model": "string",
+    "messages": [
+      {
+        "role": "user",
+        "content": "你好"
+      }
+    ],
+    "temperature": 0,
+    "top_p": 0,
+    "max_new_tokens": 0,
+    "stream": false
+  }'
+```
+
 ### CLI访问
 
 ```python
