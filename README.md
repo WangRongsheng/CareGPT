@@ -269,6 +269,33 @@ accelerate launch src/train_bash.py \
     --template default \
     --lora_target q_proj,v_proj
 ```
+
+### 强化学习
+
+```python
+# LLaMA-2, DPO
+accelerate launch src/train_bash.py \
+    --stage dpo \
+    --model_name_or_path ./Llama-2-7b-chat-hf \
+    --do_train \
+    --dataset rlhf \
+    --template llama2 \
+    --finetuning_type lora \
+    --quantization_bit 4 \
+    --lora_target q_proj,v_proj \
+    --resume_lora_training False \
+    --checkpoint_dir ./output-2 \
+    --output_dir output-dpo \
+    --per_device_train_batch_size 2 \
+    --gradient_accumulation_steps 4 \
+    --lr_scheduler_type cosine \
+    --logging_steps 10 \
+    --save_steps 1000 \
+    --learning_rate 1e-5 \
+    --num_train_epochs 1.0 \
+    --plot_loss \
+    --fp16
+```
   
 </details>
 
