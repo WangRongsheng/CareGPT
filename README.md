@@ -493,10 +493,10 @@ python src/api_demo.py \
 
 |阶段|权重介绍|下载地址|特点|底座模型|微调方法|
 |:-|:-|:-|:-|:-|:-|
-|监督微调|多轮对话数据基于LLaMA2-7b-Chat训练而来|[CareLlama2-7b-chat-sft-multi](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-multi)|出色的多轮对话能力|LLaMA2-7b-Chat|QLoRA|
-|监督微调|丰富高效医患对话数据基于LLaMA2-7b-Chat训练而来|[CareLlama2-7b-chat-sft-med](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-med)|出色的患者疾病诊断能力|LLaMA2-7b-Chat|QLoRA|
-|监督微调|混合数据基于LLaMA-7b训练而来|[CareLlama1-7b-merge](https://huggingface.co/wangrongsheng/CareLlama1-7b-merge)|更出色的医疗对话能力|LLaMA-7b|LoRA|
-|监督微调|混合数据基于LLaMA2-7b-Chat训练而来|[CareLlama2-7b-merge](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge)|更出色的医疗对话能力|LLaMA2-7b-Chat|QLoRA|
+|监督微调|多轮对话数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-chat-sft-multi](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-multi)、[🧰CareLlama2-7b-multi](https://huggingface.co/wangrongsheng/CareLlama2-7b-multi)|出色的多轮对话能力|LLaMA2-7b-Chat|QLoRA|
+|监督微调|丰富高效医患对话数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-chat-sft-med](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-med)|出色的患者疾病诊断能力|LLaMA2-7b-Chat|QLoRA|
+|监督微调|混合数据基于LLaMA-7b训练而来|[⚙️CareLlama1-7b-merge](https://huggingface.co/wangrongsheng/CareLlama1-7b-merge)|更出色的医疗对话能力|LLaMA-7b|LoRA|
+|监督微调|混合数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-merge](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge)、[🧰CareLlama2-7b-merge-mix](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge-mix)|更出色的医疗对话能力|LLaMA2-7b-Chat|QLoRA|
 
 > **Note**
 >
