@@ -64,8 +64,10 @@
 
 ![](./assets/images/hx.png)
 
-更新历史：
-- *⚡2023.08.25*: 正式开源CareLlama；
+⚡特性：
+1. 添加[ChatGPT fine-tuning](https://github.com/WangRongsheng/CareLlama/tree/main/ChatGPT)实现，推荐有额度的朋友在ChatGPT上进行微调实验；
+2. 支持[ChatGPT-Next-Web](https://github.com/WangRongsheng/CareLlama/tree/main#6chatgpt-next-web%E9%83%A8%E7%BD%B2)部署微调的模型；
+3. 支持[Gradio](https://github.com/WangRongsheng/CareLlama/tree/main#5gradio%E9%83%A8%E7%BD%B2)部署微调的模型；
 
 # 🎁数据集
 
@@ -593,7 +595,7 @@ python src/api_demo.py \
 
 </details>
 
-更多示例数据请看[CareLlama/discussions](https://huggingface.co/spaces/wangrongsheng/CareLlama/discussions)
+更多示例结果请看[CareLlama/discussions](https://huggingface.co/spaces/wangrongsheng/CareLlama/discussions)
 
 # 🍰免责声明
 
