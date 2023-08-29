@@ -77,7 +77,7 @@
 
 #### 监督训练数据
 - [icliniq-10k(en)](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing)
-- [HealthCareMagic-100k (en)](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing)
+- [HealthCareMagic-100k(en)](https://drive.google.com/file/d/1lyfqIwlLSClhgrCutWuEe_IACNq6XNUt/view?usp=sharing)
 - [ShenNong_TCM_Dataset](https://huggingface.co/datasets/michaelwzhu/ShenNong_TCM_Dataset)
 - [ChatMed_Consult_Dataset](https://huggingface.co/datasets/michaelwzhu/ChatMed_Consult_Dataset)
 - [Chinese-medical-dialogue-data](https://github.com/Toyhom/Chinese-medical-dialogue-data)
@@ -104,6 +104,7 @@
 - [Med-ChatGLM/data](https://github.com/SCIR-HI/Med-ChatGLM/tree/main/data)
 - [CMB](https://github.com/FreedomIntelligence/CMB)
 - [GenMedGPT-5k](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing)
+- [Alpaca-CoT(general)](https://huggingface.co/datasets/QingyiSi/Alpaca-CoT)
 
 #### 奖励训练数据
 
