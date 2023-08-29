@@ -661,6 +661,7 @@ python src/api_demo.py \
 - https://huggingface.co/spaces/LinkSoul/Chinese-Llama-2-7b
 - https://github.com/mushan0x0/AI0x0.com
 - https://github.com/Yidadaa/ChatGPT-Next-Web
+- https://github.com/sunner/ChatALL
 
 #### LLM资源
 - https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
