@@ -666,6 +666,7 @@ python src/api_demo.py \
 - https://github.com/hiyouga/LLaMA-Efficient-Tuning
 - https://github.com/WangRongsheng/Use-LLMs-in-Colab
 - https://github.com/HqWu-HITCS/Awesome-Chinese-LLM
+- https://github.com/LearnPrompt/LLMs-cookbook
 
 
 ![](./assets/images/end.png)
