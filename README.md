@@ -99,7 +99,7 @@
 - [MedicalGPT/finetune](https://github.com/shibing624/MedicalGPT/tree/main/data/finetune)
 - ✅[shibing624/medical](https://huggingface.co/datasets/shibing624/medical)
 - [medAlpaca/data](https://github.com/kbressem/medAlpaca#data-overview)
-- ✅[Zhongjing/sft](https://github.com/SupritYoung/Zhongjing/tree/main/data)
+- ✅[Zhongjing/sft](https://github.com/SupritYoung/Zhongjing)
 - [medical_dialog](https://huggingface.co/datasets/medical_dialog)
 - [huatuo_encyclopedia_qa](https://huggingface.co/datasets/FreedomIntelligence/huatuo_encyclopedia_qa)
 - [Med-ChatGLM/data](https://github.com/SCIR-HI/Med-ChatGLM/tree/main/data)
