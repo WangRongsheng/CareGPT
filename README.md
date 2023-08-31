@@ -672,6 +672,7 @@ python src/api_demo.py \
 - https://github.com/WangRongsheng/Use-LLMs-in-Colab
 - https://github.com/HqWu-HITCS/Awesome-Chinese-LLM
 - https://github.com/LearnPrompt/LLMs-cookbook
+- https://github.com/liucongg/ChatGPTBook
 
 
 ![](./assets/images/end.png)
