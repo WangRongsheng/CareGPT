@@ -16,6 +16,6 @@ def create_preview_box() -> Tuple["Block", "Component", "Component", "Component"
 
         close_btn = gr.Button()
 
-    close_btn.click(lambda: gr.update(visible=False), outputs=[preview_box], queue=False)
+    close_btn.click(lambda: gr.update(visible=False), outputs=[preview_box])
 
     return preview_box, preview_count, preview_samples, close_btn

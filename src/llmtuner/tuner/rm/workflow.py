@@ -5,6 +5,7 @@
 from typing import TYPE_CHECKING, Optional, List
 
 from llmtuner.dsets import get_dataset, preprocess_dataset, split_dataset
+from llmtuner.extras.callbacks import LogCallback
 from llmtuner.extras.ploting import plot_loss
 from llmtuner.tuner.core import load_model_and_tokenizer
 from llmtuner.tuner.rm.metric import compute_accuracy
@@ -21,7 +22,7 @@ def run_rm(
     data_args: "DataArguments",
     training_args: "Seq2SeqTrainingArguments",
     finetuning_args: "FinetuningArguments",
-    callbacks: Optional[List["TrainerCallback"]] = None
+    callbacks: Optional[List["TrainerCallback"]] = [LogCallback()]
 ):
     dataset = get_dataset(model_args, data_args)
     model, tokenizer = load_model_and_tokenizer(model_args, finetuning_args, training_args.do_train, stage="rm")
@@ -39,7 +40,7 @@ def run_rm(
         data_collator=data_collator,
         callbacks=callbacks,
         compute_metrics=compute_accuracy,
-        **split_dataset(dataset, data_args, training_args)
+        **split_dataset(dataset, data_args.dev_ratio, training_args.do_train)
     )
 
     # Training

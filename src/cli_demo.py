@@ -1,8 +1,13 @@
+# coding=utf-8
+# Implements stream chat in command line for fine-tuned models.
+# Usage: python cli_demo.py --model_name_or_path path_to_model --checkpoint_dir path_to_checkpoint
+
 from llmtuner import ChatModel
+from llmtuner.tuner import get_infer_args
 
 
 def main():
-    chat_model = ChatModel()
+    chat_model = ChatModel(*get_infer_args())
     history = []
     print("Welcome to the CLI application, use `clear` to remove the history, use `exit` to exit the application.")
 

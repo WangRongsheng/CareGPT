@@ -1,25 +1,48 @@
 import os
-from typing import TYPE_CHECKING, List, Union
+import hashlib
+from typing import TYPE_CHECKING, List, Optional
 
-from datasets import concatenate_datasets, interleave_datasets, load_dataset
+from datasets import Value, concatenate_datasets, interleave_datasets, load_dataset
 
-from llmtuner.dsets.utils import checksum, EXT2TYPE
 from llmtuner.extras.logging import get_logger
 
 if TYPE_CHECKING:
-    from datasets import Dataset, IterableDataset
+    from datasets import Dataset
     from llmtuner.hparams import ModelArguments, DataArguments
 
 
 logger = get_logger(__name__)
 
 
+EXT2TYPE = {
+    "csv": "csv",
+    "json": "json",
+    "jsonl": "json",
+    "txt": "text"
+}
+
+
+def checksum(data_files: List[str], file_sha1: Optional[str] = None) -> None:
+    if file_sha1 is None:
+        logger.warning("Checksum failed: missing SHA-1 hash value in dataset_info.json.")
+        return
+
+    if len(data_files) != 1:
+        logger.warning("Checksum failed: too many files.")
+        return
+
+    with open(data_files[0], "rb") as f:
+        sha1 = hashlib.sha1(f.read()).hexdigest()
+        if sha1 != file_sha1:
+            logger.warning("Checksum failed: mismatched SHA-1 hash value at {}.".format(data_files[0]))
+
+
 def get_dataset(
     model_args: "ModelArguments",
     data_args: "DataArguments"
-) -> Union["Dataset", "IterableDataset"]:
+) -> "Dataset":
     max_samples = data_args.max_samples
-    all_datasets: List[Union["Dataset", "IterableDataset"]] = [] # support multiple datasets
+    all_datasets: List["Dataset"] = [] # support multiple datasets
 
     for dataset_attr in data_args.dataset_list:
         logger.info("Loading dataset {}...".format(dataset_attr))
@@ -69,11 +92,12 @@ def get_dataset(
             if getattr(dataset_attr, column_name) and getattr(dataset_attr, column_name) != column_name:
                 dataset = dataset.rename_column(getattr(dataset_attr, column_name), column_name)
 
-        if dataset_attr.system_prompt: # add system prompt
+        if dataset_attr.source_prefix: # add prefix
+            features = None
             if data_args.streaming:
-                dataset = dataset.map(lambda _: {"system": dataset_attr.system_prompt})
-            else:
-                dataset = dataset.add_column("system", [dataset_attr.system_prompt] * len(dataset))
+                features = dataset.features
+                features["prefix"] = Value(dtype="string", id=None)
+            dataset = dataset.map(lambda _: {"prefix": dataset_attr.source_prefix}, features=features)
 
         all_datasets.append(dataset)
 
@@ -87,6 +111,6 @@ def get_dataset(
         if not data_args.streaming:
             logger.warning("We recommend using `mix_strategy=concat` in non-streaming mode.")
         stopping_strategy = "first_exhausted" if data_args.mix_strategy.endswith("under") else "all_exhausted"
-        return interleave_datasets(all_datasets, data_args.interleave_probs, stopping_strategy=stopping_strategy)
+        return interleave_datasets(all_datasets, stopping_strategy=stopping_strategy)
     else:
         raise ValueError("Unknown mixing strategy.")

@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING, Optional, List
 from transformers import DataCollatorForSeq2Seq
 
 from llmtuner.dsets import get_dataset, preprocess_dataset, split_dataset
+from llmtuner.extras.callbacks import LogCallback
 from llmtuner.extras.constants import IGNORE_INDEX
 from llmtuner.extras.misc import get_logits_processor
 from llmtuner.extras.ploting import plot_loss
@@ -13,7 +14,7 @@ from llmtuner.tuner.sft.trainer import Seq2SeqPeftTrainer
 
 if TYPE_CHECKING:
     from transformers import Seq2SeqTrainingArguments, TrainerCallback
-    from llmtuner.hparams import ModelArguments, DataArguments, FinetuningArguments, GeneratingArguments
+    from llmtuner.hparams import ModelArguments, DataArguments, FinetuningArguments
 
 
 def run_sft(
@@ -21,8 +22,7 @@ def run_sft(
     data_args: "DataArguments",
     training_args: "Seq2SeqTrainingArguments",
     finetuning_args: "FinetuningArguments",
-    generating_args: "GeneratingArguments",
-    callbacks: Optional[List["TrainerCallback"]] = None
+    callbacks: Optional[List["TrainerCallback"]] = [LogCallback()]
 ):
     dataset = get_dataset(model_args, data_args)
     model, tokenizer = load_model_and_tokenizer(model_args, finetuning_args, training_args.do_train, stage="sft")
@@ -47,18 +47,21 @@ def run_sft(
         data_collator=data_collator,
         callbacks=callbacks,
         compute_metrics=ComputeMetrics(tokenizer) if training_args.predict_with_generate else None,
-        **split_dataset(dataset, data_args, training_args)
+        **split_dataset(dataset, data_args.dev_ratio, training_args.do_train)
     )
 
     # Keyword arguments for `model.generate`
-    gen_kwargs = generating_args.to_dict()
-    gen_kwargs["eos_token_id"] = list(set([tokenizer.eos_token_id] + tokenizer.additional_special_tokens_ids))
-    gen_kwargs["pad_token_id"] = tokenizer.pad_token_id
-    gen_kwargs["logits_processor"] = get_logits_processor()
+    gen_kwargs = {
+        "do_sample": True,
+        "top_p": 0.7,
+        "max_new_tokens": data_args.max_target_length + 1,
+        "temperature": 0.95,
+        "logits_processor": get_logits_processor()
+    }
 
     # Training
     if training_args.do_train:
-        train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
+        train_result = trainer.train()
         trainer.log_metrics("train", train_result.metrics)
         trainer.save_metrics("train", train_result.metrics)
         trainer.save_state()

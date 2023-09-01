@@ -1,20 +1,18 @@
-import gradio as gr
 import logging
 import os
 import threading
 import time
 import transformers
-from transformers.trainer import TRAINING_ARGS_NAME
-from typing import Any, Dict, Generator, List, Tuple
+from typing import Generator, List, Optional, Tuple
 
 from llmtuner.extras.callbacks import LogCallback
 from llmtuner.extras.constants import DEFAULT_MODULE
 from llmtuner.extras.logging import LoggerHandler
 from llmtuner.extras.misc import torch_gc
-from llmtuner.tuner import run_exp
+from llmtuner.tuner import get_train_args, run_sft
 from llmtuner.webui.common import get_model_path, get_save_dir
 from llmtuner.webui.locales import ALERTS
-from llmtuner.webui.utils import gen_cmd, get_eval_results, update_process_bar
+from llmtuner.webui.utils import format_info, get_eval_results
 
 
 class Runner:
@@ -22,46 +20,49 @@ class Runner:
     def __init__(self):
         self.aborted = False
         self.running = False
-        self.logger_handler = LoggerHandler()
-        self.logger_handler.setLevel(logging.INFO)
-        logging.root.addHandler(self.logger_handler)
-        transformers.logging.add_handler(self.logger_handler)
 
     def set_abort(self):
         self.aborted = True
         self.running = False
 
-    def _initialize(
+    def initialize(
         self, lang: str, model_name: str, dataset: List[str]
-    ) -> str:
+    ) -> Tuple[str, str, LoggerHandler, LogCallback]:
         if self.running:
-            return ALERTS["err_conflict"][lang]
+            return None, ALERTS["err_conflict"][lang], None, None
 
         if not model_name:
-            return ALERTS["err_no_model"][lang]
+            return None, ALERTS["err_no_model"][lang], None, None
 
-        if not get_model_path(model_name):
-            return ALERTS["err_no_path"][lang]
+        model_name_or_path = get_model_path(model_name)
+        if not model_name_or_path:
+            return None, ALERTS["err_no_path"][lang], None, None
 
         if len(dataset) == 0:
-            return ALERTS["err_no_dataset"][lang]
+            return None, ALERTS["err_no_dataset"][lang], None, None
 
         self.aborted = False
-        self.logger_handler.reset()
-        self.trainer_callback = LogCallback(self)
-        return ""
+        self.running = True
 
-    def _finalize(
-        self, lang: str, finish_info: str
+        logger_handler = LoggerHandler()
+        logger_handler.setLevel(logging.INFO)
+        logging.root.addHandler(logger_handler)
+        transformers.logging.add_handler(logger_handler)
+        trainer_callback = LogCallback(self)
+
+        return model_name_or_path, "", logger_handler, trainer_callback
+
+    def finalize(
+        self, lang: str, finish_info: Optional[str] = None
     ) -> str:
         self.running = False
         torch_gc()
         if self.aborted:
             return ALERTS["info_aborted"][lang]
         else:
-            return finish_info
+            return finish_info if finish_info is not None else ALERTS["info_finished"][lang]
 
-    def _parse_train_args(
+    def run_train(
         self,
         lang: str,
         model_name: str,
@@ -69,8 +70,7 @@ class Runner:
         finetuning_type: str,
         quantization_bit: str,
         template: str,
-        system_prompt: str,
-        training_stage: str,
+        source_prefix: str,
         dataset_dir: str,
         dataset: List[str],
         max_source_length: int,
@@ -82,39 +82,37 @@ class Runner:
         gradient_accumulation_steps: int,
         lr_scheduler_type: str,
         max_grad_norm: str,
-        val_size: float,
+        dev_ratio: float,
         logging_steps: int,
         save_steps: int,
         warmup_steps: int,
         compute_type: str,
-        padding_side: str,
         lora_rank: int,
         lora_dropout: float,
         lora_target: str,
-        resume_lora_training: bool,
-        dpo_beta: float,
-        reward_model: str,
         output_dir: str
-    ) -> Tuple[str, str, List[str], str, Dict[str, Any]]:
+    ) -> Generator[str, None, None]:
+        model_name_or_path, error, logger_handler, trainer_callback = self.initialize(lang, model_name, dataset)
+        if error:
+            yield error
+            return
+
         if checkpoints:
             checkpoint_dir = ",".join(
-                [os.path.join(get_save_dir(model_name), finetuning_type, ckpt) for ckpt in checkpoints]
+                [os.path.join(get_save_dir(model_name), finetuning_type, checkpoint) for checkpoint in checkpoints]
             )
         else:
             checkpoint_dir = None
 
-        output_dir = os.path.join(get_save_dir(model_name), finetuning_type, output_dir)
-
         args = dict(
-            stage="sft",
-            model_name_or_path=get_model_path(model_name),
+            model_name_or_path=model_name_or_path,
             do_train=True,
             overwrite_cache=True,
             checkpoint_dir=checkpoint_dir,
             finetuning_type=finetuning_type,
-            quantization_bit=int(quantization_bit) if quantization_bit != "None" else None,
+            quantization_bit=int(quantization_bit) if quantization_bit else None,
             template=template,
-            system_prompt=system_prompt,
+            source_prefix=source_prefix,
             dataset_dir=dataset_dir,
             dataset=",".join(dataset),
             max_source_length=max_source_length,
@@ -129,40 +127,42 @@ class Runner:
             logging_steps=logging_steps,
             save_steps=save_steps,
             warmup_steps=warmup_steps,
-            padding_side=padding_side,
+            fp16=(compute_type == "fp16"),
+            bf16=(compute_type == "bf16"),
             lora_rank=lora_rank,
             lora_dropout=lora_dropout,
             lora_target=lora_target or DEFAULT_MODULE.get(model_name.split("-")[0], "q_proj,v_proj"),
-            resume_lora_training=resume_lora_training,
-            output_dir=output_dir
+            output_dir=os.path.join(get_save_dir(model_name), finetuning_type, output_dir)
         )
-        args[compute_type] = True
 
-        if training_stage == "Reward Modeling":
-            args["stage"] = "rm"
-            args["resume_lora_training"] = False
-        elif training_stage == "PPO":
-            args["stage"] = "ppo"
-            args["resume_lora_training"] = False
-            args["reward_model"] = reward_model
-            args["padding_side"] = "left"
-            val_size = 0
-        elif training_stage == "DPO":
-            args["stage"] = "dpo"
-            args["resume_lora_training"] = False
-            args["dpo_beta"] = dpo_beta
-        elif training_stage == "Pre-Training":
-            args["stage"] = "pt"
-
-        if val_size > 1e-6:
-            args["val_size"] = val_size
+        if dev_ratio > 1e-6:
+            args["dev_ratio"] = dev_ratio
             args["evaluation_strategy"] = "steps"
             args["eval_steps"] = save_steps
             args["load_best_model_at_end"] = True
 
-        return lang, model_name, dataset, output_dir, args
+        model_args, data_args, training_args, finetuning_args, _ = get_train_args(args)
 
-    def _parse_eval_args(
+        run_args = dict(
+            model_args=model_args,
+            data_args=data_args,
+            training_args=training_args,
+            finetuning_args=finetuning_args,
+            callbacks=[trainer_callback]
+        )
+        thread = threading.Thread(target=run_sft, kwargs=run_args)
+        thread.start()
+
+        while thread.is_alive():
+            time.sleep(1)
+            if self.aborted:
+                yield ALERTS["info_aborting"][lang]
+            else:
+                yield format_info(logger_handler.log, trainer_callback.tracker)
+
+        yield self.finalize(lang)
+
+    def run_eval(
         self,
         lang: str,
         model_name: str,
@@ -170,7 +170,7 @@ class Runner:
         finetuning_type: str,
         quantization_bit: str,
         template: str,
-        system_prompt: str,
+        source_prefix: str,
         dataset_dir: str,
         dataset: List[str],
         max_source_length: int,
@@ -178,7 +178,12 @@ class Runner:
         max_samples: str,
         batch_size: int,
         predict: bool
-    ) -> Tuple[str, str, List[str], str, Dict[str, Any]]:
+    ) -> Generator[str, None, None]:
+        model_name_or_path, error, logger_handler, trainer_callback = self.initialize(lang, model_name, dataset)
+        if error:
+            yield error
+            return
+
         if checkpoints:
             checkpoint_dir = ",".join(
                 [os.path.join(get_save_dir(model_name), finetuning_type, checkpoint) for checkpoint in checkpoints]
@@ -189,16 +194,15 @@ class Runner:
             output_dir = os.path.join(get_save_dir(model_name), finetuning_type, "eval_base")
 
         args = dict(
-            stage="sft",
-            model_name_or_path=get_model_path(model_name),
+            model_name_or_path=model_name_or_path,
             do_eval=True,
             overwrite_cache=True,
             predict_with_generate=True,
             checkpoint_dir=checkpoint_dir,
             finetuning_type=finetuning_type,
-            quantization_bit=int(quantization_bit) if quantization_bit != "None" else None,
+            quantization_bit=int(quantization_bit) if quantization_bit else None,
             template=template,
-            system_prompt=system_prompt,
+            source_prefix=source_prefix,
             dataset_dir=dataset_dir,
             dataset=",".join(dataset),
             max_source_length=max_source_length,
@@ -212,72 +216,23 @@ class Runner:
             args.pop("do_eval", None)
             args["do_predict"] = True
 
-        return lang, model_name, dataset, output_dir, args
+        model_args, data_args, training_args, finetuning_args, _ = get_train_args(args)
 
-    def preview_train(self, *args) -> Generator[Tuple[str, Dict[str, Any]], None, None]:
-        lang, model_name, dataset, _, args = self._parse_train_args(*args)
-        error = self._initialize(lang, model_name, dataset)
-        if error:
-            yield error, gr.update(visible=False)
-        else:
-            yield gen_cmd(args), gr.update(visible=False)
-
-    def preview_eval(self, *args) -> Generator[Tuple[str, Dict[str, Any]], None, None]:
-        lang, model_name, dataset, _, args = self._parse_eval_args(*args)
-        error = self._initialize(lang, model_name, dataset)
-        if error:
-            yield error, gr.update(visible=False)
-        else:
-            yield gen_cmd(args), gr.update(visible=False)
-
-    def run_train(self, *args) -> Generator[Tuple[str, Dict[str, Any]], None, None]:
-        lang, model_name, dataset, output_dir, args = self._parse_train_args(*args)
-        error = self._initialize(lang, model_name, dataset)
-        if error:
-            yield error, gr.update(visible=False)
-            return
-
-        self.running = True
-        run_kwargs = dict(args=args, callbacks=[self.trainer_callback])
-        thread = threading.Thread(target=run_exp, kwargs=run_kwargs)
+        run_args = dict(
+            model_args=model_args,
+            data_args=data_args,
+            training_args=training_args,
+            finetuning_args=finetuning_args,
+            callbacks=[trainer_callback]
+        )
+        thread = threading.Thread(target=run_sft, kwargs=run_args)
         thread.start()
 
         while thread.is_alive():
-            time.sleep(2)
+            time.sleep(1)
             if self.aborted:
-                yield ALERTS["info_aborting"][lang], gr.update(visible=False)
+                yield ALERTS["info_aborting"][lang]
             else:
-                yield self.logger_handler.log, update_process_bar(self.trainer_callback)
+                yield format_info(logger_handler.log, trainer_callback.tracker)
 
-        if os.path.exists(os.path.join(output_dir, TRAINING_ARGS_NAME)):
-            finish_info = ALERTS["info_finished"][lang]
-        else:
-            finish_info = ALERTS["err_failed"][lang]
-
-        yield self._finalize(lang, finish_info), gr.update(visible=False)
-
-    def run_eval(self, *args) -> Generator[str, None, None]:
-        lang, model_name, dataset, output_dir, args = self._parse_eval_args(*args)
-        error = self._initialize(lang, model_name, dataset)
-        if error:
-            yield error, gr.update(visible=False)
-            return
-
-        self.running = True
-        run_kwargs = dict(args=args, callbacks=[self.trainer_callback])
-        thread = threading.Thread(target=run_exp, kwargs=run_kwargs)
-        thread.start()
-
-        while thread.is_alive():
-            time.sleep(2)
-            if self.aborted:
-                yield ALERTS["info_aborting"][lang], gr.update(visible=False)
-            else:
-                yield self.logger_handler.log, update_process_bar(self.trainer_callback)
-
-        if os.path.exists(os.path.join(output_dir, "all_results.json")):
-            finish_info = get_eval_results(os.path.join(output_dir, "all_results.json"))
-        else:
-            finish_info = ALERTS["err_failed"][lang]
-
-        yield self._finalize(lang, finish_info), gr.update(visible=False)
+        yield self.finalize(lang, get_eval_results(os.path.join(output_dir, "all_results.json")))

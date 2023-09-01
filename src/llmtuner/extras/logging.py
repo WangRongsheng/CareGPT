@@ -8,9 +8,6 @@ class LoggerHandler(logging.Handler):
         super().__init__()
         self.log = ""
 
-    def reset(self):
-        self.log = ""
-
     def emit(self, record):
         if record.name == "httpx":
             return
