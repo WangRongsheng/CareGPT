@@ -1,4 +1,7 @@
 {
+  "rlhf_zh": {
+    "file_name": "comparison_gpt4_data_zh.json"
+  },
   "ls": {
     "file_name": "llama_sft.json",
     "columns": {
