@@ -13,4 +13,4 @@ authors:
 repository-code: 'https://github.com/WangRongsheng/CareLlama'
 url: 'https://github.com/WangRongsheng/CareLlama'
 abstract: Medical LLM, Open Source Driven for a Healthy Future.
-license: CC BY-NC-SA 4.0
+license: MIT
