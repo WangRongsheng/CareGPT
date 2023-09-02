@@ -106,6 +106,7 @@
 - [CMB](https://github.com/FreedomIntelligence/CMB)
 - [GenMedGPT-5k(en)](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing)
 - [Alpaca-CoT(general)](https://huggingface.co/datasets/QingyiSi/Alpaca-CoT)
+- ✅[DISC-Med-SFT](https://huggingface.co/datasets/Flmc/DISC-Med-SFT)
 
 #### 奖励训练数据
 
@@ -654,6 +655,7 @@ python src/api_demo.py \
 - https://github.com/SupritYoung/Zhongjing
 - https://medical.chat-data.com/
 - https://github.com/openmedlab/PULSE
+- https://github.com/FudanDISC/DISC-MedLLM
 
 #### 部署LLM
 - https://github.com/a16z-infra/llama2-chatbot
