@@ -562,6 +562,7 @@ python src/api_demo.py \
 4. 不要指望一个医疗LLM就可以满足所有需求，合理的做法可能是实时更新的**知识库+微调的医疗LLM**（如[ChatLaw](https://github.com/PKU-YuanGroup/ChatLaw)）；
 5. [BLOOMZ](https://huggingface.co/bigscience/bloomz)模型系列使用了PILE语料库进行训练，该语料库包含各种医学文本，包括`PubMed Central`和`PubMed Abstracts`等。这些宝贵的文本极大地丰富了BLOOMZ模型的医学知识体系，所以很多开源项目都会优先选择BLOOMZ做医学微调的底座模型；
 6. (2023.08.26) ChatGPT基于代码GPT训练而来，那我们采用[CodeLLaMA](https://huggingface.co/codellama)在下游任务微调会不会比在LLaMA-1/2上微调取得更好的结果呢？
+7. 结合我们最近的工作与最近许多公开发表的工作证明：在LLM时代，数据`质量 > 数量`这个真理，如：[Less is More! 上交清源 && 里海 | 利用200条数据微调模型，怒超MiniGPT-4！](https://mp.weixin.qq.com/s/vbca2Y5LKqnOYnvEqqrgzQ)，超大规模的SFT数据会让下游任务LLM减弱或者失去ICL、CoT等能力；
 
 # 🧰模型开源
 
@@ -655,9 +656,16 @@ python src/api_demo.py \
 - https://github.com/chaoyi-wu/PMC-LLaMA
 - https://github.com/pariskang/CMLM-ZhongJing
 - https://github.com/SupritYoung/Zhongjing
-- https://medical.chat-data.com/
 - https://github.com/openmedlab/PULSE
 - https://github.com/FudanDISC/DISC-MedLLM
+
+#### 体验LLM
+
+- https://medical.chat-data.com/
+- http://med.fudan-disc.com/
+- https://www.huatuogpt.cn/
+- https://huggingface.co/spaces/wangrongsheng/CareLlama
+- http://81.71.71.157:52022/
 
 #### 部署LLM
 - https://github.com/a16z-infra/llama2-chatbot
