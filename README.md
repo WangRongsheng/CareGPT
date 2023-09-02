@@ -666,6 +666,7 @@ python src/api_demo.py \
 - https://github.com/Yidadaa/ChatGPT-Next-Web
 - https://github.com/sunner/ChatALL
 - https://github.com/chatchat-space/Langchain-Chatchat
+- https://github.com/wenda-LLM/wenda
 
 #### LLM资源
 - https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
