@@ -68,6 +68,8 @@
 1. 添加[ChatGPT fine-tuning](https://github.com/WangRongsheng/CareLlama/tree/main/ChatGPT)实现，推荐有额度的朋友在ChatGPT上进行微调实验；
 2. 支持[ChatGPT-Next-Web](https://github.com/WangRongsheng/CareLlama/tree/main#6chatgpt-next-web%E9%83%A8%E7%BD%B2)部署微调的模型；
 3. 支持[Gradio](https://github.com/WangRongsheng/CareLlama/tree/main#5gradio%E9%83%A8%E7%BD%B2)部署微调的模型；
+4. 支持LLaMA、LLaMA-2全系列模型训练；
+5. 支持LoRA、QLoRA，包括后续PPO、DPO强化学习训练；
 
 # 🎁数据集
 
