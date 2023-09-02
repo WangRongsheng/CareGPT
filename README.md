@@ -576,10 +576,6 @@ python src/api_demo.py \
 |DPO||[⚙️CareLlama2-7b-merge-dpo](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge-dpo)||||rlhf|
 |监督微调|更多混合数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-super](https://huggingface.co/wangrongsheng/CareLlama2-7b-super)、[🧰CareLlama2-7b-super-mix](https://huggingface.co/wangrongsheng/CareLlama2-7b-super-mix)|更出色的医疗对话能力|LLaMA2-7b-Chat|QLoRA|mm,ls,ks,mc,ms,qz,hm|
 
-> **Note**
->
-> 更多模型正在持续更新...
-
 > *使用方法*：
 > 1. 下载相应的底座模型；
 > 2. 如果为LLaMA则[转为HF格式](https://github.com/WangRongsheng/CareLlama#1%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96)，如果为LLaMA-2且下载的为HF格式则不需要转化；
