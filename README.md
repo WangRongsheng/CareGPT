@@ -572,7 +572,7 @@ python src/api_demo.py \
 |监督微调|混合数据基于LLaMA-7b训练而来|[⚙️CareLlama1-7b-merge](https://huggingface.co/wangrongsheng/CareLlama1-7b-merge)|更出色的医疗对话能力|LLaMA-7b|LoRA|mm,hm|
 |监督微调|混合数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-merge](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge)、[🧰CareLlama2-7b-merge-mix](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge-mix)|更出色的医疗对话能力|LLaMA2-7b-Chat|QLoRA|mm,hm|
 |DPO||[⚙️CareLlama2-7b-merge-dpo](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge-dpo)||||rlhf|
-|监督微调|更多混合数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-super](https://huggingface.co/wangrongsheng/CareLlama2-7b-super)、[🧰CareLlama2-7b-super-mix](https://huggingface.co/wangrongsheng/CareLlama2-7b-super-mix)|更出色的医疗对话能力|LLaMA2-7b-Chat|QLoRA||
+|监督微调|更多混合数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-super](https://huggingface.co/wangrongsheng/CareLlama2-7b-super)、[🧰CareLlama2-7b-super-mix](https://huggingface.co/wangrongsheng/CareLlama2-7b-super-mix)|更出色的医疗对话能力|LLaMA2-7b-Chat|QLoRA|mm,ls,ks,mc,ms,qz,hm|
 
 > **Note**
 >
