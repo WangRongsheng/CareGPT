@@ -1,0 +1,4 @@
+export API_KEY="your_api_key"
+export CHAT_API_BASE=""
+
+streamlit run streamlit_app.py --server.port 7860 --server.address 0.0.0.0
