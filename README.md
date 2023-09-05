@@ -656,6 +656,10 @@ python src/api_demo.py \
 - https://github.com/openmedlab/PULSE
 - https://github.com/FudanDISC/DISC-MedLLM
 
+#### 评测LLM
+
+- https://github.com/FreedomIntelligence/CMB
+
 #### 体验LLM
 
 - https://medical.chat-data.com/
