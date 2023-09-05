@@ -70,6 +70,7 @@
 3. 支持[Gradio](https://github.com/WangRongsheng/CareLlama/tree/main#5gradio%E9%83%A8%E7%BD%B2)部署微调的模型；
 4. 支持LLaMA、LLaMA-2全系列模型训练；
 5. 支持LoRA、QLoRA，包括后续PPO、DPO强化学习训练；
+6. 支持模型与知识库结合问答；
 
 # 🎁数据集
 
