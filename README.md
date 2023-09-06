@@ -59,6 +59,6 @@ python src/web_demo.py \
 |:-|:-|:-|:-|:-|:-|:-|
 |监督微调|多轮对话数据基于Baichuan-13B-Chat训练而来|[⚙️Baichuan-13B-Chat-sft-multi](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-multi)|出色的多轮对话能力|Baichuan-13B-Chat|QLoRA|mm|
 |监督微调|混合对话数据基于Baichuan-13B-Chat训练而来|[⚙️Baichuan-13B-Chat-sft-merge](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-merge)|更出色的医患对话能力|Baichuan-13B-Chat|QLoRA|mm,hm|
-|监督微调|混合对话数据基于Baichuan-13B-Chat训练而来|[⚙️Baichuan-13B-Chat-sft-super](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-super)|更出色的医患对话能力|Baichuan-13B-Chat|QLoRA|mm,ls,ks,mc,ms,qz,hm|
+|监督微调|混合对话数据基于Baichuan-13B-Chat训练而来|[⚙️Baichuan-13B-Chat-sft-super](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-super)、[🧰Baichuan-13B-Chat-sft-super-mix](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-super-mix)|更出色的医患对话能力|Baichuan-13B-Chat|QLoRA|mm,ls,ks,mc,ms,qz,hm|
 
 - https://github.com/seanzhang-zhichen/baichuan-Dynamic-NTK-ALiBi
