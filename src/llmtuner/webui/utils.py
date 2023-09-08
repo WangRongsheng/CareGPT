@@ -3,22 +3,30 @@ import json
 import gradio as gr
 import matplotlib.figure
 import matplotlib.pyplot as plt
-from typing import Any, Dict, Generator, List, Tuple
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple
 from datetime import datetime
 
 from llmtuner.extras.ploting import smooth
-from llmtuner.tuner import get_infer_args, load_model_and_tokenizer
+from llmtuner.tuner import export_model
 from llmtuner.webui.common import get_model_path, get_save_dir, DATA_CONFIG
 from llmtuner.webui.locales import ALERTS
 
+if TYPE_CHECKING:
+    from llmtuner.extras.callbacks import LogCallback
 
-def format_info(log: str, tracker: dict) -> str:
-    info = log
-    if "current_steps" in tracker:
-        info += "Running **{:d}/{:d}**: {} < {}\n".format(
-            tracker["current_steps"], tracker["total_steps"], tracker["elapsed_time"], tracker["remaining_time"]
-        )
-    return info
+
+def update_process_bar(callback: "LogCallback") -> Dict[str, Any]:
+    if not callback.max_steps:
+        return gr.update(visible=False)
+
+    percentage = round(100 * callback.cur_steps / callback.max_steps, 0) if callback.max_steps != 0 else 100.0
+    label = "Running {:d}/{:d}: {} < {}".format(
+        callback.cur_steps,
+        callback.max_steps,
+        callback.elapsed_time,
+        callback.remaining_time
+    )
+    return gr.update(label=label, value=percentage, visible=True)
 
 
 def get_time() -> str:
@@ -28,6 +36,7 @@ def get_time() -> str:
 def can_preview(dataset_dir: str, dataset: list) -> Dict[str, Any]:
     with open(os.path.join(dataset_dir, DATA_CONFIG), "r", encoding="utf-8") as f:
         dataset_info = json.load(f)
+
     if (
         len(dataset) > 0
         and "file_name" in dataset_info[dataset[0]]
@@ -38,20 +47,40 @@ def can_preview(dataset_dir: str, dataset: list) -> Dict[str, Any]:
         return gr.update(interactive=False)
 
 
-def get_preview(dataset_dir: str, dataset: list) -> Tuple[int, list, Dict[str, Any]]:
+def get_preview(
+    dataset_dir: str, dataset: list, start: Optional[int] = 0, end: Optional[int] = 2
+) -> Tuple[int, list, Dict[str, Any]]:
     with open(os.path.join(dataset_dir, DATA_CONFIG), "r", encoding="utf-8") as f:
         dataset_info = json.load(f)
-    data_file = dataset_info[dataset[0]]["file_name"]
+
+    data_file: str = dataset_info[dataset[0]]["file_name"]
     with open(os.path.join(dataset_dir, data_file), "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return len(data), data[:2], gr.update(visible=True)
+        if data_file.endswith(".json"):
+            data = json.load(f)
+        elif data_file.endswith(".jsonl"):
+            data = [json.loads(line) for line in f]
+        else:
+            data = [line for line in f]
+    return len(data), data[start:end], gr.update(visible=True)
 
 
 def can_quantize(finetuning_type: str) -> Dict[str, Any]:
     if finetuning_type != "lora":
-        return gr.update(value="", interactive=False)
+        return gr.update(value="None", interactive=False)
     else:
         return gr.update(interactive=True)
+
+
+def gen_cmd(args: Dict[str, Any]) -> str:
+    if args.get("do_train", None):
+        args["plot_loss"] = True
+    cmd_lines = ["CUDA_VISIBLE_DEVICES=0 python src/train_bash.py "]
+    for k, v in args.items():
+        if v is not None and v != "":
+            cmd_lines.append("    --{} {} ".format(k, str(v)))
+    cmd_text = "\\\n".join(cmd_lines)
+    cmd_text = "```bash\n{}\n```".format(cmd_text)
+    return cmd_text
 
 
 def get_eval_results(path: os.PathLike) -> str:
@@ -87,8 +116,14 @@ def gen_plot(base_model: str, finetuning_type: str, output_dir: str) -> matplotl
     return fig
 
 
-def export_model(
-    lang: str, model_name: str, checkpoints: List[str], finetuning_type: str, max_shard_size: int, save_dir: str
+def save_model(
+    lang: str,
+    model_name: str,
+    checkpoints: List[str],
+    finetuning_type: str,
+    template: str,
+    max_shard_size: int,
+    save_dir: str
 ) -> Generator[str, None, None]:
     if not model_name:
         yield ALERTS["err_no_model"][lang]
@@ -114,12 +149,11 @@ def export_model(
     args = dict(
         model_name_or_path=model_name_or_path,
         checkpoint_dir=checkpoint_dir,
-        finetuning_type=finetuning_type
+        finetuning_type=finetuning_type,
+        template=template,
+        output_dir=save_dir
     )
 
     yield ALERTS["info_exporting"][lang]
-    model_args, _, finetuning_args, _ = get_infer_args(args)
-    model, tokenizer = load_model_and_tokenizer(model_args, finetuning_args)
-    model.save_pretrained(save_dir, max_shard_size=str(max_shard_size)+"GB")
-    tokenizer.save_pretrained(save_dir)
+    export_model(args, max_shard_size="{}GB".format(max_shard_size))
     yield ALERTS["info_exported"][lang]

@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING, Dict
 import gradio as gr
 
-from llmtuner.webui.utils import export_model
+from llmtuner.webui.utils import save_model
 
 if TYPE_CHECKING:
     from gradio.components import Component
@@ -16,12 +16,13 @@ def create_export_tab(top_elems: Dict[str, "Component"]) -> Dict[str, "Component
     info_box = gr.Textbox(show_label=False, interactive=False)
 
     export_btn.click(
-        export_model,
+        save_model,
         [
             top_elems["lang"],
             top_elems["model_name"],
             top_elems["checkpoints"],
             top_elems["finetuning_type"],
+            top_elems["template"],
             max_shard_size,
             save_dir
         ],

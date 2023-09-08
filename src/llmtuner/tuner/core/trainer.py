@@ -13,26 +13,25 @@ from llmtuner.extras.logging import get_logger
 from llmtuner.extras.save_and_load import get_state_dict, load_trainable_params
 
 if TYPE_CHECKING:
+    from transformers import PreTrainedTokenizer, Seq2SeqTrainingArguments, TrainerState
     from llmtuner.hparams import FinetuningArguments
 
 
 logger = get_logger(__name__)
 
 
-class PeftTrainer(Seq2SeqTrainer):
+class PeftModelMixin:
     r"""
-    Inherits Seq2SeqTrainer to support parameter-efficient checkpoints.
+    Patches the save and load methods in Hugging Face Trainer for PeftModel and ModelWithValueHead.
     """
 
-    def __init__(self, finetuning_args: "FinetuningArguments", **kwargs):
-        super().__init__(**kwargs)
-        self.finetuning_args = finetuning_args
-        self._remove_log()
-
-    def _remove_log(self):
-        if self.is_world_process_zero() and os.path.exists(os.path.join(self.args.output_dir, "trainer_log.jsonl")):
-            logger.warning("Previous log file in this folder will be deleted.")
-            os.remove(os.path.join(self.args.output_dir, "trainer_log.jsonl"))
+    def __init__(self) -> None: # for type checking
+        self.model: PreTrainedModel = None
+        self.tokenizer: "PreTrainedTokenizer" = None
+        self.args: "Seq2SeqTrainingArguments" = None
+        self.finetuning_args: "FinetuningArguments" = None
+        self.state: "TrainerState" = None
+        raise AssertionError("Mixin should not be initialized.")
 
     def _save(self, output_dir: Optional[str] = None, state_dict: Optional[Dict[str, torch.Tensor]] = None) -> None:
         r"""
@@ -47,7 +46,6 @@ class PeftTrainer(Seq2SeqTrainer):
         logger.info(f"Saving model checkpoint to {output_dir}")
 
         model = unwrap_model(self.model)
-
         if isinstance(model, PreTrainedModelWrapper):
             # Custom state dict: https://github.com/lvwerra/trl/blob/v0.4.7/trl/models/modeling_value_head.py#L200
             model_state_dict = state_dict or model.state_dict()
@@ -68,7 +66,10 @@ class PeftTrainer(Seq2SeqTrainer):
             torch.save(state_dict, os.path.join(output_dir, WEIGHTS_NAME))
 
         if self.finetuning_args.finetuning_type == "full" and self.tokenizer is not None:
-            self.tokenizer.save_pretrained(output_dir)
+            try:
+                self.tokenizer.save_pretrained(output_dir)
+            except:
+                logger.warning("Cannot save tokenizer, copy the files manually.")
 
         with open(os.path.join(output_dir, TRAINING_ARGS_NAME), "w", encoding="utf-8") as f:
             f.write(self.args.to_json_string() + "\n")
@@ -94,3 +95,13 @@ class PeftTrainer(Seq2SeqTrainer):
             model.load_adapter(self.state.best_model_checkpoint, model.active_adapter)
         else: # freeze/full-tuning
             load_trainable_params(model, self.state.best_model_checkpoint)
+
+
+class PeftTrainer(PeftModelMixin, Seq2SeqTrainer):
+    r"""
+    Inherits Seq2SeqTrainer to support parameter-efficient checkpoints.
+    """
+
+    def __init__(self, finetuning_args: "FinetuningArguments", **kwargs):
+        Seq2SeqTrainer.__init__(self, **kwargs)
+        self.finetuning_args = finetuning_args

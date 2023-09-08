@@ -3,6 +3,7 @@
 from copy import deepcopy
 from peft import PeftModel
 from typing import TYPE_CHECKING, Optional, List
+from transformers import Seq2SeqTrainingArguments
 
 from llmtuner.dsets import get_dataset, preprocess_dataset, split_dataset
 from llmtuner.extras.constants import IGNORE_INDEX
@@ -12,8 +13,8 @@ from llmtuner.tuner.dpo.collator import DPODataCollatorWithPadding
 from llmtuner.tuner.dpo.trainer import DPOPeftTrainer
 
 if TYPE_CHECKING:
-    from transformers import Seq2SeqTrainingArguments, TrainerCallback
-    from llmtuner.hparams import ModelArguments, DataArguments, FinetuningArguments, GeneratingArguments
+    from transformers import TrainerCallback
+    from llmtuner.hparams import ModelArguments, DataArguments, FinetuningArguments
 
 
 def run_dpo(
@@ -21,7 +22,6 @@ def run_dpo(
     data_args: "DataArguments",
     training_args: "Seq2SeqTrainingArguments",
     finetuning_args: "FinetuningArguments",
-    generating_args: "GeneratingArguments",
     callbacks: Optional[List["TrainerCallback"]] = None
 ):
     dataset = get_dataset(model_args, data_args)
@@ -32,14 +32,14 @@ def run_dpo(
         label_pad_token_id=IGNORE_INDEX if data_args.ignore_pad_token_for_loss else tokenizer.pad_token_id
     )
 
-    training_args.remove_unused_columns = False # important for pairwise dataset
-    ref_model = deepcopy(model) if not isinstance(model, PeftModel) else None
+    training_args_dict = training_args.to_dict()
+    training_args_dict.update(dict(remove_unused_columns=False)) # important for pairwise dataset
+    training_args = Seq2SeqTrainingArguments(**training_args_dict)
 
     # Initialize our Trainer
     trainer = DPOPeftTrainer(
         finetuning_args=finetuning_args,
-        generating_args=generating_args,
-        ref_model=ref_model,
+        ref_model=deepcopy(model) if not isinstance(model, PeftModel) else None,
         model=model,
         args=training_args,
         tokenizer=tokenizer,

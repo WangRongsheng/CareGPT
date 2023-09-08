@@ -12,13 +12,22 @@ class Manager:
     def __init__(self, elem_list: List[Dict[str, Component]]):
         self.elem_list = elem_list
 
-    def gen_refresh(self) -> Dict[str, Any]:
+    def gen_refresh(self, lang: str) -> Dict[str, Any]:
         refresh_dict = {
             "dataset": {"choices": list_dataset()["choices"]},
             "output_dir": {"value": get_time()}
         }
+
         user_config = load_config()
-        if user_config["last_model"]:
+        if not lang:
+            if user_config.get("lang", None):
+                lang = user_config["lang"]
+            else:
+                lang = "en"
+
+        refresh_dict["lang"] = {"value": lang}
+
+        if user_config.get("last_model", None):
             refresh_dict["model_name"] = {"value": user_config["last_model"]}
             refresh_dict["model_path"] = {"value": get_model_path(user_config["last_model"])}
 
@@ -26,10 +35,12 @@ class Manager:
 
     def gen_label(self, lang: str) -> Dict[Component, Dict[str, Any]]: # cannot use TYPE_CHECKING
         update_dict = {}
-        refresh_dict = self.gen_refresh()
+        refresh_dict = self.gen_refresh(lang)
 
         for elems in self.elem_list:
             for name, component in elems.items():
-                update_dict[component] = gr.update(**LOCALES[name][lang], **refresh_dict.get(name, {}))
+                update_dict[component] = gr.update(
+                    **LOCALES[name][refresh_dict["lang"]["value"]], **refresh_dict.get(name, {})
+                )
 
         return update_dict

@@ -3,7 +3,7 @@ from transformers.trainer_utils import SchedulerType
 
 import gradio as gr
 
-from llmtuner.extras.constants import STAGES
+from llmtuner.extras.constants import TRAINING_STAGES
 from llmtuner.webui.common import list_checkpoint, list_dataset, DEFAULT_DATA_DIR
 from llmtuner.webui.components.data import create_preview_box
 from llmtuner.webui.utils import can_preview, get_preview, gen_plot
@@ -15,14 +15,17 @@ if TYPE_CHECKING:
 
 def create_train_tab(top_elems: Dict[str, "Component"], runner: "Runner") -> Dict[str, "Component"]:
     with gr.Row():
-        training_stage = gr.Dropdown(choices=STAGES, value=STAGES[0], scale=2)
+        training_stage = gr.Dropdown(
+            choices=list(TRAINING_STAGES.keys()), value=list(TRAINING_STAGES.keys())[0], scale=2
+        )
         dataset_dir = gr.Textbox(value=DEFAULT_DATA_DIR, scale=2)
         dataset = gr.Dropdown(multiselect=True, scale=4)
         data_preview_btn = gr.Button(interactive=False, scale=1)
 
     preview_box, preview_count, preview_samples, close_btn = create_preview_box()
 
-    dataset_dir.change(list_dataset, [dataset_dir], [dataset])
+    training_stage.change(list_dataset, [dataset_dir, training_stage], [dataset])
+    dataset_dir.change(list_dataset, [dataset_dir, training_stage], [dataset])
     dataset.change(can_preview, [dataset_dir, dataset], [data_preview_btn])
     data_preview_btn.click(
         get_preview,
