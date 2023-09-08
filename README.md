@@ -52,3 +52,5 @@ python src/web_demo.py \
 |阶段|权重介绍|下载地址|特点|底座模型|微调方法|数据集|
 |:-|:-|:-|:-|:-|:-|:-|
 |监督微调|多轮对话数据基于Baichuan2-13B-Chat训练而来|[⚙️Baichuan2-13B-Chat-sft-multi](https://huggingface.co/wangrongsheng/Baichuan2-13B-Chat-sft-multi)|出色的多轮对话能力|Baichuan2-13B-Chat|QLoRA|mm|
+
+> 我们在[CMB](https://cmedbenchmark.llmzoo.com/)榜单进行了评测，评测脚本和评测结果见：[Eval](https://github.com/WangRongsheng/CareLlama/tree/carebaichuan2/eval)
