@@ -61,6 +61,6 @@ python src/web_demo.py \
 |监督微调|混合对话数据基于Baichuan-13B-Chat训练而来|[⚙️Baichuan-13B-Chat-sft-merge](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-merge)|更出色的医患对话能力|Baichuan-13B-Chat|QLoRA|mm,hm|
 |监督微调|混合对话数据基于Baichuan-13B-Chat训练而来|[⚙️Baichuan-13B-Chat-sft-super](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-super)、[🧰Baichuan-13B-Chat-sft-super-mix](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-super-mix)|更出色的医患对话能力|Baichuan-13B-Chat|QLoRA|mm,ls,ks,mc,ms,qz,hm|
 
-> 我们在[CMB](https://cmedbenchmark.llmzoo.com/)榜单进行了评测，评测脚本和评测结果见：[Eval](https://github.com/WangRongsheng/CareLlama/tree/carebaichuan2/eval)
+> 我们在[CMB](https://cmedbenchmark.llmzoo.com/)榜单进行了评测，评测脚本和评测结果见：[Eval](https://github.com/WangRongsheng/CareLlama/tree/carebaichuan/eval)
 
 - https://github.com/seanzhang-zhichen/baichuan-Dynamic-NTK-ALiBi
