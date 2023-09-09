@@ -1,6 +1,6 @@
 > **Note**
 >
-> 在线体验CareLlama：https://huggingface.co/spaces/wangrongsheng/CareLlama
+> 在线体验CareLlama：[![Huggingface Gradio](https://img.shields.io/static/v1?label=Demo&message=Huggingface%20Gradio&color=orange)](https://huggingface.co/spaces/wangrongsheng/CareLlama)
 
 <div align="center">
   <a href="https://github.com/WangRongsheng/ChatGenTitle">
