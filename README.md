@@ -72,6 +72,7 @@
 5. 支持LoRA、QLoRA，包括后续PPO、DPO强化学习训练；
 6. 支持模型与知识库结合问答；
 7. 开源了超过[60个医院科室的导诊材料信息](https://github.com/WangRongsheng/CareLlama/tree/main/data/Hospital%20Guide)；
+8. 开发了支持GPT-4/ChatGPT模型蒸馏医学数据的工具，能够批量生成各种用于构建知识库和微调的数据；
 
 # 🎁数据集
 
