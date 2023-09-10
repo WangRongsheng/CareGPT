@@ -684,6 +684,12 @@ python src/api_demo.py \
 - https://github.com/yuanjie-ai/ChatLLM
 - https://github.com/labring/FastGPT
 
+#### LLM数据制作
+
+- https://github.com/yanqiangmiffy/GoGPT-Instruction
+- https://github.com/wpydcr/LLM-Kit
+- https://github.com/huang1332/finetune_dataset_maker
+
 #### LLM资源
 - https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
 - https://github.com/WangRongsheng/MedQA-ChatGLM
