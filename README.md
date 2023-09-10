@@ -567,6 +567,7 @@ python src/api_demo.py \
 5. [BLOOMZ](https://huggingface.co/bigscience/bloomz)模型系列使用了PILE语料库进行训练，该语料库包含各种医学文本，包括`PubMed Central`和`PubMed Abstracts`等。这些宝贵的文本极大地丰富了BLOOMZ模型的医学知识体系，所以很多开源项目都会优先选择BLOOMZ做医学微调的底座模型；
 6. (2023.08.26) ChatGPT基于代码GPT训练而来，那我们采用[CodeLLaMA](https://huggingface.co/codellama)在下游任务微调会不会比在LLaMA-1/2上微调取得更好的结果呢？
 7. 结合我们最近的工作与最近许多公开发表的工作证明：在LLM时代，数据`质量 > 数量`这个真理，如：[Less is More! 上交清源 && 里海 | 利用200条数据微调模型，怒超MiniGPT-4！](https://mp.weixin.qq.com/s/vbca2Y5LKqnOYnvEqqrgzQ)，超大规模的SFT数据会让下游任务LLM减弱或者失去ICL、CoT等能力；
+8. 对于垂类模型，或许我们更应该关注PT的过程，而不是采集千万百万的SFT数据做训练，我们的建议是`大规模预训练+小规模监督微调=超强的LLM模型`；
 
 # 🧰模型开源
 
