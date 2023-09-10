@@ -1,6 +1,6 @@
 > **Note**
 >
-> 在线体验CareLlama：https://huggingface.co/spaces/wangrongsheng/CareLlama
+> 在线体验🧑‍🚀CareLlama：https://huggingface.co/spaces/wangrongsheng/CareLlama
 
 <div align="center">
   <a href="https://github.com/WangRongsheng/ChatGenTitle">
