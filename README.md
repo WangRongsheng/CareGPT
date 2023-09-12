@@ -74,6 +74,7 @@
 7. 开源了超过[60个医院科室的导诊材料信息](https://github.com/WangRongsheng/CareLlama/tree/main/data/Hospital%20Guide)；
 8. 开发了支持GPT-4/ChatGPT模型蒸馏医学数据的工具，能够批量生成各种用于构建知识库和微调的数据；
 9. 聚合了丰富的开源医学LLM、LLM训练的医学数据、LLM部署资料、LLM测评以及相关LLM的资源整理；
+10. 我们参与了医学LLM的[CMB榜单评测-IvyGPT](https://cmedbenchmark.llmzoo.com/static/leaderboard.html)，在测试中，我们领先ChatGPT及一众开源医学LLM；
 
 # 🎁数据集
 
