@@ -641,7 +641,7 @@ python src/api_demo.py \
 |:-|:-|
 |<img src="./assets/support/wx.jpg" width="200" />|<img src="./assets/support/zfb.jpg" width="200" />|
 
-您的支持将是我们继续探索LLM的动力，所有的支持将用于模型的推理部署以及部分的训练任务中。
+您的支持将是我们继续探索LLM的动力，所有的支持将用于**模型的推理部署任务**中。
 
 # 📚项目参考
 
