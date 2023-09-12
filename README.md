@@ -2,6 +2,10 @@
 >
 > 在线体验🧑‍🚀CareLlama：https://huggingface.co/spaces/wangrongsheng/CareLlama
 
+> **warning**
+> 
+> **CareLlama为MPU的医疗大语言模型IvyGPT的分支，其存在意义是探索医疗数据、医疗LLM训练与部署相关的工作研究。**
+
 <div align="center">
   <a href="https://github.com/WangRongsheng/ChatGenTitle">
     <img src="https://github.com/WangRongsheng/CareLlama/blob/main/assets/images/home.png" alt="Logo" height="280">
