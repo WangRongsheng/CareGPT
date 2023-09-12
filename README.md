@@ -693,6 +693,7 @@ python src/api_demo.py \
 - https://github.com/xusenlinzy/api-for-open-llm
 - https://github.com/yuanjie-ai/ChatLLM
 - https://github.com/labring/FastGPT
+- https://github.com/vllm-project/vllm
 
 #### LLM数据制作
 
