@@ -694,6 +694,7 @@ python src/api_demo.py \
 - https://github.com/yuanjie-ai/ChatLLM
 - https://github.com/labring/FastGPT
 - https://github.com/vllm-project/vllm
+- https://github.com/dataelement/bisheng
 
 #### LLM数据制作
 
