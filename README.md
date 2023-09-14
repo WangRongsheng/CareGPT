@@ -667,6 +667,9 @@ python src/api_demo.py \
 - https://github.com/SupritYoung/Zhongjing
 - https://github.com/openmedlab/PULSE
 - https://github.com/FudanDISC/DISC-MedLLM
+- https://github.com/Zlasejd/HuangDI
+- https://github.com/2020MEAI/TCMLLM
+- https://github.com/PharMolix/OpenBioMed
 
 #### 评测LLM
 
