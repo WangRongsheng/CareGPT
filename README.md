@@ -704,6 +704,7 @@ python src/api_demo.py \
 - https://github.com/yanqiangmiffy/GoGPT-Instruction
 - https://github.com/wpydcr/LLM-Kit
 - https://github.com/huang1332/finetune_dataset_maker
+- https://github.com/threeColorFr/LLMforDialogDataGenerate
 
 #### LLM资源
 - https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
