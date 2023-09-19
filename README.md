@@ -618,7 +618,7 @@ python src/api_demo.py \
 # 🥂项目引用
 
 如果你使用了本项目的模型，数据或者代码，请声明引用：
-```
+```bib
 @misc{wang2023carellama,
       title={CareLlama: Medical LLM, Open Source Driven for a Healthy Future}, 
       author={Rongsheng Wang, Ruizhe Zhou, Haoming Chen, Yapeng Wang, Tao Tan},
@@ -626,6 +626,15 @@ python src/api_demo.py \
       publisher = {GitHub},
       journal = {GitHub repository},
       howpublished = {\url{https://github.com/WangRongsheng/CareLlama}},
+}
+```
+
+```bib
+@article{wang2023ivygpt,
+  title={IvyGPT: InteractiVe Chinese pathwaY language model in medical domain},
+  author={Wang, Rongsheng and Duan, Yaofei and Lam, ChanTong and Chen, Jiexi and Xu, Jiangsheng and Chen, Haoming and Liu, Xiaohong and Pang, Patrick Cheong-Iao and Tan, Tao},
+  journal={arXiv preprint arXiv:2307.10512},
+  year={2023}
 }
 ```
 
