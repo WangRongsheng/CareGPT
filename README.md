@@ -707,6 +707,7 @@ python src/api_demo.py \
 - https://github.com/labring/FastGPT
 - https://github.com/vllm-project/vllm
 - https://github.com/dataelement/bisheng
+- https://github.com/lobehub/lobe-chat
 
 #### LLM数据制作
 
