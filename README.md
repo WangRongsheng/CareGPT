@@ -493,7 +493,7 @@ CUDA_VISIBLE_DEVICES=0 python src/train_bash.py \
 # LLaMA-2
 python src/export_model.py \
     --model_name_or_path ./Llama-2-7b-chat-hf \
-    --template default \
+    --template llama2 \
     --finetuning_type lora \
     --checkpoint_dir output-1 \
     --output_dir output_export
@@ -501,7 +501,7 @@ python src/export_model.py \
 # LLaMA
 python src/export_model.py \
     --model_name_or_path ./Llama-7b-hf \
-    --template llama2 \
+    --template default \
     --finetuning_type lora \
     --checkpoint_dir output \
     --output_dir output_export
