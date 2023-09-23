@@ -693,7 +693,7 @@ python src/api_demo.py \
 - http://med.fudan-disc.com/
 - https://www.huatuogpt.cn/
 - https://huggingface.co/spaces/wangrongsheng/CareLlama
-- http://81.71.71.157:52022/
+- https://huggingface.co/spaces/fb700/chatglm-fitness-RLHF
 
 #### 部署LLM
 - https://github.com/a16z-infra/llama2-chatbot
