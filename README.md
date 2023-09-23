@@ -639,6 +639,8 @@ python src/api_demo.py \
 }
 ```
 
+本工作由澳门理工大学应用科学学院硕士研究生王荣胜、周瑞哲、陈浩明完成，指导老师为檀韬副教授和王亚鹏副教授。
+
 # 🔔使用许可
 
 此存储库遵循[MIT License](https://github.com/WangRongsheng/CareLlama/blob/main/LICENSE) ，请参阅许可条款。
