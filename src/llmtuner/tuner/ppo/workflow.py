@@ -4,14 +4,14 @@ import math
 from trl import PPOConfig
 from torch.optim import AdamW
 from typing import TYPE_CHECKING, Optional, List
-from transformers import DataCollatorForSeq2Seq
+from transformers import DataCollatorWithPadding
 from transformers.optimization import get_scheduler
-from transformers.utils.versions import require_version
 
 from llmtuner.dsets import get_dataset, preprocess_dataset
+from llmtuner.extras.callbacks import SavePeftModelCallback
 from llmtuner.extras.ploting import plot_loss
 from llmtuner.tuner.core import load_model_and_tokenizer
-from llmtuner.tuner.ppo.trainer import PPOPeftTrainer
+from llmtuner.tuner.ppo.trainer import CustomPPOTrainer
 
 if TYPE_CHECKING:
     from transformers import Seq2SeqTrainingArguments, TrainerCallback
@@ -29,7 +29,9 @@ def run_ppo(
     dataset = get_dataset(model_args, data_args)
     model, tokenizer = load_model_and_tokenizer(model_args, finetuning_args, training_args.do_train, stage="ppo")
     dataset = preprocess_dataset(dataset, tokenizer, data_args, training_args, stage="ppo")
-    data_collator = DataCollatorForSeq2Seq(tokenizer=tokenizer, label_pad_token_id=tokenizer.pad_token_id)
+
+    tokenizer.padding_side = "left" # use left-padding in generation while using right-padding in training
+    data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
     ppo_config = PPOConfig(
         model_name=model_args.model_name_or_path,
@@ -44,7 +46,6 @@ def run_ppo(
     )
 
     if finetuning_args.ppo_score_norm:
-        require_version("trl>=0.5.1.dev0", "To fix: pip install git+https://github.com/huggingface/trl.git")
         ppo_config.use_score_scaling = True
         ppo_config.use_score_norm = True
 
@@ -61,11 +62,10 @@ def run_ppo(
     )
 
     # Initialize our Trainer
-    ppo_trainer = PPOPeftTrainer(
+    ppo_trainer = CustomPPOTrainer(
         training_args=training_args,
-        finetuning_args=finetuning_args,
         generating_args=generating_args,
-        callbacks=callbacks,
+        callbacks=callbacks + [SavePeftModelCallback()],
         compute_dtype=model_args.compute_dtype,
         config=ppo_config,
         model=model,
@@ -79,7 +79,7 @@ def run_ppo(
 
     # Training
     if training_args.do_train:
-        ppo_trainer.ppo_train(max_target_length=data_args.max_target_length)
+        ppo_trainer.ppo_train()
         ppo_trainer.save_model()
         ppo_trainer.save_state() # must be called after save_model to have a folder
         if ppo_trainer.is_world_process_zero() and model_args.plot_loss:

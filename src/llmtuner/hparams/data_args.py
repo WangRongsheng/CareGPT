@@ -11,15 +11,14 @@ class DatasetAttr:
     dataset_name: Optional[str] = None
     dataset_sha1: Optional[str] = None
     system_prompt: Optional[str] = None
+    ranking: Optional[bool] = False
+    prompt: Optional[str] = "instruction"
+    query: Optional[str] = "input"
+    response: Optional[str] = "output"
+    history: Optional[str] = None
 
     def __repr__(self) -> str:
         return self.dataset_name
-
-    def __post_init__(self):
-        self.prompt = "instruction"
-        self.query = "input"
-        self.response = "output"
-        self.history = None
 
 
 @dataclass
@@ -27,7 +26,8 @@ class DataArguments:
     r"""
     Arguments pertaining to what data we are going to input our model for training and evaluation.
     """
-    template: str = field(
+    template: Optional[str] = field(
+        default=None,
         metadata={"help": "Which template to use for constructing prompts in training and inference."}
     )
     dataset: Optional[str] = field(
@@ -41,6 +41,10 @@ class DataArguments:
     split: Optional[str] = field(
         default="train",
         metadata={"help": "Which dataset split to use for training and evaluation."}
+    )
+    cutoff_len: Optional[int] = field(
+        default=1024,
+        metadata={"help": "The maximum length of the model inputs after tokenization."}
     )
     streaming: Optional[bool] = field(
         default=False,
@@ -65,14 +69,6 @@ class DataArguments:
     preprocessing_num_workers: Optional[int] = field(
         default=None,
         metadata={"help": "The number of processes to use for the preprocessing."}
-    )
-    max_source_length: Optional[int] = field(
-        default=512,
-        metadata={"help": "The maximum total input sequence length after tokenization."}
-    )
-    max_target_length: Optional[int] = field(
-        default=512,
-        metadata={"help": "The maximum total output sequence length after tokenization."}
     )
     max_samples: Optional[int] = field(
         default=None,
@@ -129,5 +125,6 @@ class DataArguments:
                 dataset_attr.response = dataset_info[name]["columns"].get("response", None)
                 dataset_attr.history = dataset_info[name]["columns"].get("history", None)
 
+            dataset_attr.ranking = dataset_info[name].get("ranking", False)
             dataset_attr.system_prompt = prompt_list[i]
             self.dataset_list.append(dataset_attr)

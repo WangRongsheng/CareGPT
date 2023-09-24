@@ -3,7 +3,7 @@ import json
 import gradio as gr
 import matplotlib.figure
 import matplotlib.pyplot as plt
-from typing import TYPE_CHECKING, Any, Dict, Generator, List, Tuple
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple
 from datetime import datetime
 
 from llmtuner.extras.ploting import smooth
@@ -36,6 +36,7 @@ def get_time() -> str:
 def can_preview(dataset_dir: str, dataset: list) -> Dict[str, Any]:
     with open(os.path.join(dataset_dir, DATA_CONFIG), "r", encoding="utf-8") as f:
         dataset_info = json.load(f)
+
     if (
         len(dataset) > 0
         and "file_name" in dataset_info[dataset[0]]
@@ -46,18 +47,26 @@ def can_preview(dataset_dir: str, dataset: list) -> Dict[str, Any]:
         return gr.update(interactive=False)
 
 
-def get_preview(dataset_dir: str, dataset: list) -> Tuple[int, list, Dict[str, Any]]:
+def get_preview(
+    dataset_dir: str, dataset: list, start: Optional[int] = 0, end: Optional[int] = 2
+) -> Tuple[int, list, Dict[str, Any]]:
     with open(os.path.join(dataset_dir, DATA_CONFIG), "r", encoding="utf-8") as f:
         dataset_info = json.load(f)
-    data_file = dataset_info[dataset[0]]["file_name"]
+
+    data_file: str = dataset_info[dataset[0]]["file_name"]
     with open(os.path.join(dataset_dir, data_file), "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return len(data), data[:2], gr.update(visible=True)
+        if data_file.endswith(".json"):
+            data = json.load(f)
+        elif data_file.endswith(".jsonl"):
+            data = [json.loads(line) for line in f]
+        else:
+            data = [line for line in f]
+    return len(data), data[start:end], gr.update(visible=True)
 
 
 def can_quantize(finetuning_type: str) -> Dict[str, Any]:
     if finetuning_type != "lora":
-        return gr.update(value="", interactive=False)
+        return gr.update(value="None", interactive=False)
     else:
         return gr.update(interactive=True)
 
@@ -65,7 +74,7 @@ def can_quantize(finetuning_type: str) -> Dict[str, Any]:
 def gen_cmd(args: Dict[str, Any]) -> str:
     if args.get("do_train", None):
         args["plot_loss"] = True
-    cmd_lines = ["CUDA_VISIBLE_DEVICES=0 python "]
+    cmd_lines = ["CUDA_VISIBLE_DEVICES=0 python src/train_bash.py "]
     for k, v in args.items():
         if v is not None and v != "":
             cmd_lines.append("    --{} {} ".format(k, str(v)))
@@ -81,7 +90,7 @@ def get_eval_results(path: os.PathLike) -> str:
 
 
 def gen_plot(base_model: str, finetuning_type: str, output_dir: str) -> matplotlib.figure.Figure:
-    log_file = os.path.join(get_save_dir(base_model), finetuning_type, output_dir, "trainer_log.jsonl")
+    log_file = get_save_dir(base_model, finetuning_type, output_dir, "trainer_log.jsonl")
     if not os.path.isfile(log_file):
         return None
 
@@ -130,7 +139,7 @@ def save_model(
         return
 
     checkpoint_dir = ",".join(
-            [os.path.join(get_save_dir(model_name), finetuning_type, checkpoint) for checkpoint in checkpoints]
+            [get_save_dir(model_name, finetuning_type, ckpt) for ckpt in checkpoints]
         )
 
     if not save_dir:

@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 from datetime import timedelta
 
 from transformers import TrainerCallback
-from transformers.trainer_utils import has_length
+from transformers.trainer_utils import has_length, PREFIX_CHECKPOINT_DIR
 
 from llmtuner.extras.constants import LOG_FILE_NAME
 from llmtuner.extras.logging import get_logger
@@ -15,6 +15,28 @@ if TYPE_CHECKING:
 
 
 logger = get_logger(__name__)
+
+
+class SavePeftModelCallback(TrainerCallback):
+
+    def on_save(self, args: "TrainingArguments", state: "TrainerState", control: "TrainerControl", **kwargs):
+        r"""
+        Event called after a checkpoint save.
+        """
+        if args.should_save:
+            output_dir = os.path.join(args.output_dir, "{}-{}".format(PREFIX_CHECKPOINT_DIR, state.global_step))
+            model = kwargs.pop("model")
+            if getattr(model, "is_peft_model", False):
+                getattr(model, "pretrained_model").save_pretrained(output_dir)
+
+    def on_train_end(self, args: "TrainingArguments", state: "TrainerState", control: "TrainerControl", **kwargs):
+        r"""
+        Event called at the end of training.
+        """
+        if args.should_save:
+            model = kwargs.pop("model")
+            if getattr(model, "is_peft_model", False):
+                getattr(model, "pretrained_model").save_pretrained(args.output_dir)
 
 
 class LogCallback(TrainerCallback):

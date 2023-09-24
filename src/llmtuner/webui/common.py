@@ -6,7 +6,7 @@ import gradio as gr
 from peft.utils import WEIGHTS_NAME as PEFT_WEIGHTS_NAME
 from transformers.trainer import WEIGHTS_NAME, WEIGHTS_INDEX_NAME
 
-from llmtuner.extras.constants import DEFAULT_TEMPLATE, SUPPORTED_MODELS
+from llmtuner.extras.constants import DEFAULT_TEMPLATE, SUPPORTED_MODELS, TRAINING_STAGES
 
 
 DEFAULT_CACHE_DIR = "cache"
@@ -16,8 +16,8 @@ USER_CONFIG = "user.config"
 DATA_CONFIG = "dataset_info.json"
 
 
-def get_save_dir(model_name: str) -> str:
-    return os.path.join(DEFAULT_SAVE_DIR, os.path.split(model_name)[-1])
+def get_save_dir(*args) -> os.PathLike:
+    return os.path.join(DEFAULT_SAVE_DIR, *args)
 
 
 def get_config_path() -> os.PathLike:
@@ -29,7 +29,7 @@ def load_config() -> Dict[str, Any]:
         with open(get_config_path(), "r", encoding="utf-8") as f:
             return json.load(f)
     except:
-        return {"lang": "", "last_model": "", "path_dict": {}}
+        return {"lang": None, "last_model": None, "path_dict": {}, "cache_dir": None}
 
 
 def save_config(lang: str, model_name: str, model_path: str) -> None:
@@ -56,7 +56,7 @@ def get_template(model_name: str) -> str:
 
 def list_checkpoint(model_name: str, finetuning_type: str) -> Dict[str, Any]:
     checkpoints = []
-    save_dir = os.path.join(get_save_dir(model_name), finetuning_type)
+    save_dir = get_save_dir(model_name, finetuning_type)
     if save_dir and os.path.isdir(save_dir):
         for checkpoint in os.listdir(save_dir):
             if (
@@ -78,6 +78,10 @@ def load_dataset_info(dataset_dir: str) -> Dict[str, Any]:
         return {}
 
 
-def list_dataset(dataset_dir: Optional[str] = None) -> Dict[str, Any]:
+def list_dataset(
+    dataset_dir: Optional[str] = None, training_stage: Optional[str] = list(TRAINING_STAGES.keys())[0]
+) -> Dict[str, Any]:
     dataset_info = load_dataset_info(dataset_dir if dataset_dir is not None else DEFAULT_DATA_DIR)
-    return gr.update(value=[], choices=list(dataset_info.keys()))
+    ranking = TRAINING_STAGES[training_stage] in ["rm", "dpo"]
+    datasets = [k for k, v in dataset_info.items() if v.get("ranking", False) == ranking]
+    return gr.update(value=[], choices=datasets)
