@@ -682,6 +682,7 @@ python src/api_demo.py \
 - https://github.com/Zlasejd/HuangDI
 - https://github.com/2020MEAI/TCMLLM
 - https://github.com/PharMolix/OpenBioMed
+- https://huggingface.co/Writer/palmyra-med-20b
 
 #### 评测LLM
 
