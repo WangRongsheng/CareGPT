@@ -712,6 +712,7 @@ python src/api_demo.py \
 - https://github.com/vllm-project/vllm
 - https://github.com/dataelement/bisheng
 - https://github.com/lobehub/lobe-chat
+- https://github.com/purton-tech/bionicgpt
 
 #### LLM数据制作
 
