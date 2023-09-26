@@ -59,3 +59,7 @@ python src/export_model.py \
 |阶段|权重介绍|下载地址|特点|底座模型|微调方法|数据集|
 |:-|:-|:-|:-|:-|:-|:-|
 |监督微调|多轮对话数据基于InternLM-20B-Chat训练而来|[⚙️careinternlm-20B-Chat-sft-multi](https://huggingface.co/wangrongsheng/careinternlm-20B-Chat-sft-multi)、[🧰careinternlm-20B-Chat-sft-multi-mix](https://huggingface.co/wangrongsheng/careinternlm-20B-Chat-sft-multi-mix)|出色的多轮对话能力|InternLM-20B-Chat|QLoRA|mm|
+
+|阶段|权重介绍|下载地址|特点|底座模型|微调方法|数据集|
+|:-|:-|:-|:-|:-|:-|:-|
+|监督微调|多轮对话数据基于QWen-14B-Chat训练而来|[⚙️careqwen-14B-Chat-sft-multi](https://huggingface.co/wangrongsheng/careqwen-14B-Chat-sft-multi)|出色的多轮对话能力|QWen-14B-Chat|QLoRA|mm|
