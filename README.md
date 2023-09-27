@@ -713,6 +713,7 @@ python src/api_demo.py \
 - https://github.com/dataelement/bisheng
 - https://github.com/lobehub/lobe-chat
 - https://github.com/purton-tech/bionicgpt
+- https://github.com/Chainlit/chainlit
 
 #### LLM数据制作
 
