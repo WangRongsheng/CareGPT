@@ -721,6 +721,7 @@ python src/api_demo.py \
 - https://github.com/wpydcr/LLM-Kit
 - https://github.com/huang1332/finetune_dataset_maker
 - https://github.com/threeColorFr/LLMforDialogDataGenerate
+- https://github.com/alibaba/data-juicer
 
 #### LLM资源
 - https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
