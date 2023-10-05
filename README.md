@@ -574,6 +574,7 @@ python src/api_demo.py \
 7. 结合我们最近的工作与最近许多公开发表的工作证明：在LLM时代，数据`质量 > 数量`这个真理，如：[Less is More! 上交清源 && 里海 | 利用200条数据微调模型，怒超MiniGPT-4！](https://mp.weixin.qq.com/s/vbca2Y5LKqnOYnvEqqrgzQ)，超大规模的SFT数据会让下游任务LLM减弱或者失去ICL、CoT等能力；
 8. 对于垂类模型，或许我们更应该关注PT的过程，而不是采集千万百万的SFT数据做训练，我们的建议是`大规模预训练+小规模监督微调=超强的LLM模型`；
 9. 一个好的预训练医学LLM尚未在开源社区中被开放出来，期待有人能去补充这样的工作>>>[WiNGPT2开源了预训练的医学模型](https://github.com/winninghealth/WiNGPT2)；
+10. 预训练可以灌入知识，监督微调只是激活领域能力(无法关注知识)？预训练的知识与监督微调知识应该呼应？预训练几十GB的语料知识会被原来数万亿token预训练的模型知识淹没？
 
 > [!IMPORTANT]
 > 欢迎大家在[ISSUE](https://github.com/WangRongsheng/CareLlama/issues/new)中补充新的经验！
