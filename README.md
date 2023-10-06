@@ -79,6 +79,7 @@
 8. 开发了支持[GPT-4/ChatGPT模型蒸馏医学数据](https://huggingface.co/spaces/wangrongsheng/DataMaker)的工具，能够批量生成各种用于构建知识库和微调的数据；
 9. 聚合了丰富的开源医学LLM、LLM训练的医学数据、LLM部署资料、LLM测评以及相关LLM的资源整理；
 10. 我们参与了医学LLM的[CMB榜单评测-IvyGPT](https://cmedbenchmark.llmzoo.com/static/leaderboard.html)，在测试中，我们领先ChatGPT及一众开源医学LLM；
+11. 我们基于自有数据集在不同基座LLM上训练开源了多个医疗LLM，您可以直接下载体验；
 
 # 🎁数据集
 
