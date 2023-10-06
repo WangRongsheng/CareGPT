@@ -733,6 +733,7 @@ python src/api_demo.py \
 - https://github.com/HqWu-HITCS/Awesome-Chinese-LLM
 - https://github.com/LearnPrompt/LLMs-cookbook
 - https://github.com/liucongg/ChatGPTBook
+- https://github.com/EvilPsyCHo/train_custom_LLM
 
 
 ![](./assets/images/end.png)
