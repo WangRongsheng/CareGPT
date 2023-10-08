@@ -88,6 +88,7 @@
 - [LLM-Pretrain-FineTune/data_pretrain](https://github.com/X-jun-0130/LLM-Pretrain-FineTune/tree/main/data_pretrain)
 - [MedicalGPT/pretrain](https://github.com/shibing624/MedicalGPT/tree/main/data/pretrain)
 - [zysj](https://www.zysj.com.cn/)
+- [TCM-Ancient-Books](https://github.com/xiaopangxia/TCM-Ancient-Books) (近700项中医药古籍文本)
 
 #### 监督训练数据
 - [icliniq-10k(en)](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing)
