@@ -567,7 +567,7 @@ python src/api_demo.py \
 
 # 💫实践经验
 
-1. 在CareLlama中并未对分词模型进行中文分词的添加和重新训练，但是效果依旧表现可喜；
+1. 在CareGPT中并未对分词模型进行中文分词的添加和重新训练，但是效果依旧表现可喜；
 2. 全流程的LLM训练包括：预训练、监督微调、奖励模型、强化学习，**多数情况下监督微调即可满足自身需求**；
 3. 在算力充足情况下推荐**使用医疗数据和通用语料数据进行训练**，这样模型既可以有医学上的训练学习，也可以保持通用能力（如指令遵循）；
 4. 不要指望一个医疗LLM就可以满足所有需求，合理的做法可能是实时更新的**知识库+微调的医疗LLM**（如[ChatLaw](https://github.com/PKU-YuanGroup/ChatLaw)）；
@@ -626,12 +626,12 @@ python src/api_demo.py \
 如果你使用了本项目的模型，数据或者代码，请声明引用：
 ```bib
 @misc{wang2023carellama,
-      title={CareLlama: Medical LLM, Open Source Driven for a Healthy Future}, 
+      title={CareGPT: Medical LLM, Open Source Driven for a Healthy Future}, 
       author={Rongsheng Wang, Ruizhe Zhou, Haoming Chen, Yapeng Wang, Tao Tan},
       year={2023},
       publisher = {GitHub},
       journal = {GitHub repository},
-      howpublished = {\url{https://github.com/WangRongsheng/CareLlama}},
+      howpublished = {\url{https://github.com/WangRongsheng/CareGPT}},
 }
 ```
 
