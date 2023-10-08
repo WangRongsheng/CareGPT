@@ -661,6 +661,7 @@ python src/api_demo.py \
 # 📚项目参考
 
 #### 医学LLM
+
 - https://github.com/llSourcell/DoctorGPT
 - https://github.com/facebookresearch/llama-recipes
 - https://github.com/Kent0n-Li/ChatDoctor
@@ -701,6 +702,7 @@ python src/api_demo.py \
 - ([password](https://huggingface.co/fb700/chatglm-fitness-RLHF))https://huggingface.co/spaces/fb700/chatglm-fitness-RLHF
 
 #### 部署LLM
+
 - https://github.com/a16z-infra/llama2-chatbot
 - https://github.com/liltom-eth/llama2-webui
 - https://github.com/soulteary/docker-llama2-chat
@@ -729,6 +731,7 @@ python src/api_demo.py \
 - https://github.com/alibaba/data-juicer
 
 #### LLM资源
+
 - https://github.com/onejune2018/Awesome-Medical-Healthcare-Dataset-For-LLM
 - https://github.com/WangRongsheng/MedQA-ChatGLM
 - https://github.com/hiyouga/LLaMA-Efficient-Tuning
@@ -738,5 +741,9 @@ python src/api_demo.py \
 - https://github.com/liucongg/ChatGPTBook
 - https://github.com/EvilPsyCHo/train_custom_LLM
 
+#### LLM多模态
+
+- https://github.com/QwenLM/Qwen-VL
+- https://github.com/haotian-liu/LLaVA
 
 ![](./assets/images/end.png)
