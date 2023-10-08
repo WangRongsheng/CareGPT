@@ -1,10 +1,10 @@
 > **Note**
 >
-> 在线体验🧑‍🚀CareLlama/CareGPT：https://huggingface.co/spaces/wangrongsheng/CareLlama
+> 在线体验🧑‍🚀CareGPT：https://huggingface.co/spaces/wangrongsheng/CareLlama
 
 > **warning**
 > 
-> **CareLlama/CareGPT为MPU的医疗大语言模型IvyGPT的分支，其存在意义是探索医疗数据、医疗LLM训练与部署相关的工作研究。**
+> **CareGPT(原名CareLlama) 为MPU的医疗大语言模型IvyGPT的分支，其存在意义是探索医疗数据、医疗LLM训练与部署相关的工作研究。**
 
 <div align="center">
   <a href="https://github.com/WangRongsheng/ChatGenTitle">
