@@ -721,6 +721,7 @@ python src/api_demo.py \
 - https://github.com/purton-tech/bionicgpt
 - https://github.com/Chainlit/chainlit
 - https://github.com/arc53/DocsGPT
+- https://vercel.com/templates/ai
 
 #### LLM数据制作
 
