@@ -625,7 +625,7 @@ python src/api_demo.py \
 
 如果你使用了本项目的模型，数据或者代码，请声明以下引用：
 ```bib
-@misc{wang2023carellama,
+@misc{wang2023caregpt,
       title={CareGPT: Medical LLM, Open Source Driven for a Healthy Future}, 
       author={Rongsheng Wang, Ruizhe Zhou, Haoming Chen, Yapeng Wang, Tao Tan},
       year={2023},
