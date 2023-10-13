@@ -623,7 +623,7 @@ python src/api_demo.py \
 
 本工作由澳门理工大学应用科学学院硕士研究生王荣胜、周瑞哲、陈浩明完成，指导老师为檀韬副教授和王亚鹏副教授。
 
-如果你使用了本项目的模型，数据或者代码，请声明引用：
+如果你使用了本项目的模型，数据或者代码，请声明以下引用：
 ```bib
 @misc{wang2023carellama,
       title={CareGPT: Medical LLM, Open Source Driven for a Healthy Future}, 
@@ -641,6 +641,15 @@ python src/api_demo.py \
   author={Wang, Rongsheng and Duan, Yaofei and Lam, ChanTong and Chen, Jiexi and Xu, Jiangsheng and Chen, Haoming and Liu, Xiaohong and Pang, Patrick Cheong-Iao and Tan, Tao},
   journal={arXiv preprint arXiv:2307.10512},
   year={2023}
+}
+```
+
+```bib
+@Misc{llama-factory,
+  title = {LLaMA Factory},
+  author = {hiyouga},
+  howpublished = {\url{https://github.com/hiyouga/LLaMA-Factory}},
+  year = {2023}
 }
 ```
 
