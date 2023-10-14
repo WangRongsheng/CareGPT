@@ -598,6 +598,7 @@ python src/api_demo.py \
 |Model|Institution|Score|
 |:-|:-|:-|
 |GPT-4|OpenAI|58.37|
+|Baichuan2-53B|百川智能|45.6|
 |**IvyGPT (Baichuan2-13B+10W)**|澳门理工大学|38.54|
 |ChatGPT|OpenAI|38.09|
 |**IvyGPT (Baichuan-13B+10W)**|澳门理工大学|34.60|
