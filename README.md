@@ -612,7 +612,7 @@ python src/api_demo.py \
 |DoctorGLM|上海科技大学|7.63|
 |BianQue-2|华东师范大学|7.26|
 
-|模型|无幻觉率|
+|Model|Non-hallucination Rate|
 |:-|:-|
 |ERNIE-Bot|69.33%|
 |Baichuan2-53B|68.22%|
@@ -628,6 +628,8 @@ python src/api_demo.py \
 |Baichuan-13B-base|25.33%|
 |Baichuan2-7B-base|25.33%|
 |Baichuan-7B-base|22.22%|
+
+> 参考自：[2310.03368.pdf](https://arxiv.org/pdf/2310.03368.pdf)
 
 # 📳结果演示
 
