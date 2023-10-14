@@ -127,6 +127,7 @@
 - [Zhongjing/rw](https://github.com/SupritYoung/Zhongjing/tree/main/data)
 - [comparison_gpt4_data](https://huggingface.co/datasets/wangrongsheng/comparison_gpt4_data)
 - [HH-RLHF](https://huggingface.co/datasets/Anthropic/hh-rlhf)
+- [UltraFeedback](https://github.com/OpenBMB/UltraFeedback)
 
 # 🗜️全流程训练
 
