@@ -599,6 +599,22 @@ python src/api_demo.py \
 > 3. 下载上述你想要加载的权重；
 > 4. 根据[推理配置](https://github.com/WangRongsheng/CareLlama/tree/main#4%E6%8E%A8%E7%90%86%E9%85%8D%E7%BD%AE)开始使用我们的模型；
 
+|Model|Institution|Score|
+|:-|:-|:-|
+|GPT-4|OpenAI|58.37|
+|**IvyGPT (Baichuan2-13B+10W)**|澳门理工大学|38.54|
+|ChatGPT|OpenAI|38.09|
+|**IvyGPT (Baichuan-13B+10W)**|澳门理工大学|34.60|
+|HuatuoGPT (BLOOMZ)|香港中文大学 (深圳)|31.38|
+|**IvyGPT (Qwen-7B+PT-WiNGPT32亿+10W)**|澳门理工大学|28.26|
+|MedicalGPT|-|26.45|
+|ChatMed-Consult|华东师范大学|21.71|
+|Bentsao|哈尔滨工业大学|21.25|
+|ChatGLM-Med|哈尔滨工业大学|20.67|
+|**IvyGPT (LLaMA-2-7B+220W)**|澳门理工大学|18.55|
+|DoctorGLM|上海科技大学|7.63|
+|BianQue-2|华东师范大学|7.26|
+
 # 📳结果演示
 
 ![](./assets/examples/demo4.png)
