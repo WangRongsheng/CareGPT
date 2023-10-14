@@ -8,7 +8,7 @@
   </a>
 
   <p align="center">
-    <h3> CareGPT (关怀羊驼)：医疗LLM，开源驱动，共创健康未来 </h3>
+    <h3> CareGPT (关怀GPT)：医疗LLM，开源驱动，共创健康未来 </h3>
     <p align="center">
       <em>资源整合 / 开源模型 / 丰富数据 / 高效部署 / LLaMA</em>
     </p>
