@@ -4,7 +4,7 @@
 
 <div align="center">
   <a href="https://github.com/WangRongsheng/ChatGenTitle">
-    <img src="https://github.com/WangRongsheng/CareLlama/blob/main/assets/images/home.png" alt="Logo" height="280">
+    <img src="https://github.com/WangRongsheng/CareLlama/blob/main/assets/images/caregpt.jpg" alt="Logo" height="280">
   </a>
 
   <p align="center">
