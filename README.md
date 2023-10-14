@@ -612,6 +612,23 @@ python src/api_demo.py \
 |DoctorGLM|上海科技大学|7.63|
 |BianQue-2|华东师范大学|7.26|
 
+|模型|无幻觉率|
+|:-|:-|
+|ERNIE-Bot|69.33%|
+|Baichuan2-53B|68.22%|
+|ChatGLM-Pro|61.33%|
+|GPT-4-0613|53.11%|
+|QWen-14B-Chat|46.89%|
+|Baichuan2-13B-Chat|42.44%|
+|Baichuan2-7B-Chat|40.67%|
+|GPT3.5-turbo-0613|39.33%|
+|ChatGLM2-6B|34.89%|
+|Baichuan2-13B-base|33.78%|
+|Baichuan-13B-Chat|31.33%|
+|Baichuan-13B-base|25.33%|
+|Baichuan2-7B-base|25.33%|
+|Baichuan-7B-base|22.22%|
+
 # 📳结果演示
 
 ![](./assets/examples/demo4.png)
