@@ -595,6 +595,8 @@ python src/api_demo.py \
 > 3. 下载上述你想要加载的权重；
 > 4. 根据[推理配置](https://github.com/WangRongsheng/CareLlama/tree/main#4%E6%8E%A8%E7%90%86%E9%85%8D%E7%BD%AE)开始使用我们的模型；
 
+# 💯模型评测
+
 |Model|Institution|Score|
 |:-|:-|:-|
 |GPT-4|OpenAI|58.37|
