@@ -732,6 +732,7 @@ python src/api_demo.py \
 - https://github.com/PharMolix/OpenBioMed
 - https://huggingface.co/Writer/palmyra-med-20b
 - https://github.com/winninghealth/WiNGPT2
+- https://github.com/DUTIR-BioNLP/Taiyi-LLM
 
 #### 评测LLM
 
