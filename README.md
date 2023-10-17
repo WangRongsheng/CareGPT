@@ -513,9 +513,11 @@ python src/export_model.py \
 python app.py
 ```
 
+![](./Gradio/gradio-demo.png)
+
 </details>
 
-![](./Gradio/gradio-demo.png)
+
 
 ## 6.[ChatGPT-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web)部署
 
@@ -558,9 +560,9 @@ python src/api_demo.py \
 2. 修改配置：
 安装并打开Next，然后打开`设置`，修改`接口地址`为：`http://127.0.0.1:8000/`（即你的API接口地址），然后就可以使用了。
 
-</details>
-
 ![](./Next/chatgpt-next-web.png)
+
+</details>
 
 # 💫实践经验
 
