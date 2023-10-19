@@ -688,6 +688,8 @@ python src/api_demo.py \
 }
 ```
 
+本项目已被收录到[机器之心SOTA-CareGPT](https://sota.jiqizhixin.com/project/caregpt)。
+
 # 🔔使用许可
 
 此存储库遵循[MIT License](https://github.com/WangRongsheng/CareLlama/blob/main/LICENSE) ，请参阅许可条款。
