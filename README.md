@@ -747,6 +747,7 @@ python src/api_demo.py \
 - https://www.huatuogpt.cn/
 - https://huggingface.co/spaces/wangrongsheng/CareLlama
 - ([password](https://huggingface.co/fb700/chatglm-fitness-RLHF))https://huggingface.co/spaces/fb700/chatglm-fitness-RLHF
+- http://heal-gpt.cn/
 
 #### 部署LLM
 
