@@ -735,6 +735,7 @@ python src/api_demo.py \
 - https://huggingface.co/Writer/palmyra-med-20b
 - https://github.com/winninghealth/WiNGPT2
 - https://github.com/DUTIR-BioNLP/Taiyi-LLM
+- https://github.com/TONYCHANBB/HealGPT
 
 #### 评测LLM
 
