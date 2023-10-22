@@ -584,7 +584,7 @@ python src/api_demo.py \
 
 |阶段|权重介绍|下载地址|特点|底座模型|微调方法|数据集|
 |:-|:-|:-|:-|:-|:-|:-|
-|监督微调|多轮对话数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-chat-sft-multi](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-multi)、[🧰CareLlama2-7b-multi](https://huggingface.co/wangrongsheng/CareLlama2-7b-multi)|出色的多轮对话能力|LLaMA2-7b-Chat|QLoRA|mm|
+|🌟监督微调|多轮对话数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-chat-sft-multi](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-multi)、[🧰CareLlama2-7b-multi](https://huggingface.co/wangrongsheng/CareLlama2-7b-multi)|出色的多轮对话能力|LLaMA2-7b-Chat|QLoRA|mm|
 |监督微调|丰富高效医患对话数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-chat-sft-med](https://huggingface.co/wangrongsheng/CareLlama2-7b-chat-sft-med)|出色的患者疾病诊断能力|LLaMA2-7b-Chat|QLoRA|hm|
 |监督微调|混合数据基于LLaMA-7b训练而来|[⚙️CareLlama1-7b-merge](https://huggingface.co/wangrongsheng/CareLlama1-7b-merge)|更出色的医疗对话能力|LLaMA-7b|LoRA|mm,hm|
 |监督微调|混合数据基于LLaMA2-7b-Chat训练而来|[⚙️CareLlama2-7b-merge](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge)、[🧰CareLlama2-7b-merge-mix](https://huggingface.co/wangrongsheng/CareLlama2-7b-merge-mix)|更出色的医疗对话能力|LLaMA2-7b-Chat|QLoRA|mm,hm|
@@ -593,9 +593,10 @@ python src/api_demo.py \
 |监督微调|多轮对话数据基于Baichuan-13B-Chat训练而来|[⚙️Baichuan-13B-Chat-sft-multi](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-multi)|出色的多轮对话能力|Baichuan-13B-Chat|QLoRA|mm|
 |监督微调|混合对话数据基于Baichuan-13B-Chat训练而来|[⚙️Baichuan-13B-Chat-sft-merge](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-merge)|更出色的医患对话能力|Baichuan-13B-Chat|QLoRA|mm,hm|
 |监督微调|混合对话数据基于Baichuan-13B-Chat训练而来|[⚙️Baichuan-13B-Chat-sft-super](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-super)、[🧰Baichuan-13B-Chat-sft-super-mix](https://huggingface.co/wangrongsheng/Baichuan-13B-Chat-sft-super-mix)|更出色的医患对话能力|Baichuan-13B-Chat|QLoRA|mm,ls,ks,mc,ms,qz,hm|
-|监督微调|多轮对话数据基于QWen-7B训练而来|[🧰carellm](https://huggingface.co/wangrongsheng/carellm)|出色的多轮对话能力|QWen-7B|QLoRA|mm|
+|🌟监督微调|多轮对话数据基于QWen-7B训练而来|[🧰carellm](https://huggingface.co/wangrongsheng/carellm)|出色的多轮对话能力|QWen-7B|QLoRA|mm|
 |监督微调|多轮对话数据基于QWen-14B-Chat训练而来|[⚙️careqwen-14B-Chat-sft-multi](https://huggingface.co/wangrongsheng/careqwen-14B-Chat-sft-multi)|出色的多轮对话能力|QWen-14B-Chat|QLoRA|mm|
 |监督微调|多轮对话数据基于InternLM-20B-Chat训练而来|[⚙️careinternlm-20B-Chat-sft-multi](https://huggingface.co/wangrongsheng/careinternlm-20B-Chat-sft-multi)、[🧰careinternlm-20B-Chat-sft-multi-mix](https://huggingface.co/wangrongsheng/careinternlm-20B-Chat-sft-multi-mix)|出色的多轮对话能力|InternLM-20B-Chat|QLoRA|mm|
+|🌟监督微调|多轮对话数据基于Baichuan2-13B-Chat训练而来|[⚙️Baichuan2-13B-Chat-sft-multi](https://huggingface.co/wangrongsheng/Baichuan2-13B-Chat-sft-multi)、[🧰Baichuan2-13B-Chat-sft-multi-mix](https://huggingface.co/wangrongsheng/Baichuan2-13B-Chat-sft-multi-mix)|出色的多轮对话能力|Baichuan2-13B-Chat|QLoRA|mm|
 
 > *使用方法*：
 > 1. 下载相应的底座模型；
