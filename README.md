@@ -1,3 +1,8 @@
+<p align="left">
+    &nbsp中文&nbsp ｜ <a href="README_en.md">English</a>
+</p>
+<br>
+
 > **warning**
 > 
 > **CareGPT(原名CareLlama) 为MPU的医疗大语言模型IvyGPT的分支，其存在意义是探索医疗数据、医疗LLM训练与部署相关的工作研究。**
