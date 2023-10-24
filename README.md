@@ -582,7 +582,8 @@ python src/api_demo.py \
 
 > [!IMPORTANT]
 > 欢迎大家在[ISSUE](https://github.com/WangRongsheng/CareLlama/issues/new)中补充新的经验！
-> 11, 12, 13方法论来自于[130亿大语言模型仅改变1个权重就会完全丧失语言能力！复旦大学自然语言处理实验室最新研究](https://mp.weixin.qq.com/s/jx0YSOummTOkTiQGqgWEcA)
+> 
+> 11, 12, 13方法论来自于[130亿大语言模型仅改变1个权重就会完全丧失语言能力！复旦大学自然语言处理实验室最新研究](https://mp.weixin.qq.com/s/jx0YSOummTOkTiQGqgWEcA).
 
 # 🧰模型开源
 
