@@ -790,6 +790,7 @@ python src/api_demo.py \
 - https://github.com/Chainlit/chainlit
 - https://github.com/arc53/DocsGPT
 - https://vercel.com/templates/ai
+- https://github.com/ollama-webui/ollama-webui
 
 #### LLM数据制作
 
