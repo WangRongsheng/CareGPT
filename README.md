@@ -768,6 +768,7 @@ python src/api_demo.py \
 - https://huggingface.co/spaces/wangrongsheng/CareLlama
 - ([password](https://huggingface.co/fb700/chatglm-fitness-RLHF))https://huggingface.co/spaces/fb700/chatglm-fitness-RLHF
 - http://heal-gpt.cn/
+- 商汤医疗大模型-大医：https://chat.sensetime.com/
 
 #### 部署LLM
 
