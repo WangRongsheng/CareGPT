@@ -791,6 +791,7 @@ python src/api_demo.py \
 - https://github.com/arc53/DocsGPT
 - https://vercel.com/templates/ai
 - https://github.com/ollama-webui/ollama-webui
+- https://github.com/huggingface/chat-ui
 
 #### LLM数据制作
 
