@@ -585,6 +585,7 @@ python src/api_demo.py \
 12. 指令微调阶段不能够进行过多轮次训练：(1)针对少量数据进行多个EPOCH的训练，可能会造成语言关键区域变化，从而导致整个模型失效; (2)为了特定任务提升的指令微调，为了保证模型语言能力关键区不被大幅度调整，需要添加通用指令微调数据或者预训练数据;
 13. 训练数据要严格控制噪音：(1)预训练数据中如果出现少量连续的噪音数据，比如连续重复单词、非单词序列等，都可能造成特定维度的调整，从而使得模型整体PPL大幅度波动; (2)有监督微调指令中如果有大量与原有大语言模型不匹配的指令片段，也可能造成模型调整特定维度，从而使得模型整体性能大幅度下降;
 14. 大模型混合多种能力数据微调时呈现：高资源冲突，低资源增益，所以混合不同数据进行微调需要一定的工程技巧；
+15. 通常来说，lora与full-tuning有不可忽略的性能差异（如[LoRA results in 4-6% lower performance compared to full fine-tuning](https://github.com/huggingface/peft/issues/622)）；
 
 > [!IMPORTANT]
 > 欢迎大家在[ISSUE](https://github.com/WangRongsheng/CareLlama/issues/new)中补充新的经验！
