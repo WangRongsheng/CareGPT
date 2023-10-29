@@ -630,6 +630,7 @@ python src/api_demo.py \
 |**IvyGPT (Baichuan2-13B+10W)**|澳门理工大学|38.54|
 |ChatGPT|OpenAI|38.09|
 |**IvyGPT (Baichuan-13B+10W)**|澳门理工大学|34.60|
+|ChatGLM3-6B|智谱AI|33.76|
 |HuatuoGPT (BLOOMZ)|香港中文大学 (深圳)|31.38|
 |**IvyGPT (Qwen-7B+PT-WiNGPT32亿+10W)**|澳门理工大学|28.26|
 |MedicalGPT|-|26.45|
