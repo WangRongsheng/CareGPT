@@ -802,6 +802,7 @@ python src/api_demo.py \
 - https://vercel.com/templates/ai
 - https://github.com/ollama-webui/ollama-webui
 - https://github.com/huggingface/chat-ui
+- https://github.com/xusenlinzy/api-for-open-llm
 
 #### LLM数据制作
 
