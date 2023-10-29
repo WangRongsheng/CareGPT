@@ -622,8 +622,11 @@ python src/api_demo.py \
 
 |Model|Institution|Score|
 |:-|:-|:-|
+|ShuKunGPT|数坤科技|64.44|
 |GPT-4|OpenAI|58.37|
 |**Baichuan2-53B**|百川智能|45.69|
+|ChatGLM2-6B|智谱AI|44.91|
+|Baichuan-13B-chat|百川智能|41.63|
 |**IvyGPT (Baichuan2-13B+10W)**|澳门理工大学|38.54|
 |ChatGPT|OpenAI|38.09|
 |**IvyGPT (Baichuan-13B+10W)**|澳门理工大学|34.60|
