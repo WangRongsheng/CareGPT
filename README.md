@@ -823,4 +823,11 @@ python src/api_demo.py \
 - https://github.com/QwenLM/Qwen-VL
 - https://github.com/haotian-liu/LLaVA
 
+#### LLM下载
+
+- https://huggingface.co/
+- https://modelscope.cn/
+- https://aliendao.cn/
+- https://hf-mirror.com/
+
 ![](./assets/images/end.png)
