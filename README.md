@@ -764,6 +764,7 @@ python src/api_demo.py \
 - https://github.com/DUTIR-BioNLP/Taiyi-LLM
 - https://github.com/TONYCHANBB/HealGPT
 - https://github.com/som-shahlab/Clinfo.AI
+- https://github.com/DUTIR-BioNLP/Taiyi-LLM
 
 #### 评测LLM
 
