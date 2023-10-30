@@ -778,6 +778,7 @@ python src/api_demo.py \
 - http://heal-gpt.cn/
 - 商汤科技-大医：https://chat.sensetime.com/
 - 科大讯飞-讯飞晓医：小程序搜索使用
+- https://www.clinfo.ai/
 
 #### 部署LLM
 
