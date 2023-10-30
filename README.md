@@ -828,6 +828,7 @@ python src/api_demo.py \
 - https://github.com/QwenLM/Qwen-VL
 - https://github.com/haotian-liu/LLaVA
 - https://github.com/kyegomez/Med-PaLM
+- https://github.com/williamliujl/Qilin-Med-VL
 
 #### LLM下载
 
