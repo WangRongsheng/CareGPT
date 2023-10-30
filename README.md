@@ -763,6 +763,7 @@ python src/api_demo.py \
 - https://github.com/winninghealth/WiNGPT2
 - https://github.com/DUTIR-BioNLP/Taiyi-LLM
 - https://github.com/TONYCHANBB/HealGPT
+- https://github.com/som-shahlab/Clinfo.AI
 
 #### 评测LLM
 
