@@ -781,6 +781,7 @@ python src/api_demo.py \
 - 商汤科技-大医：https://chat.sensetime.com/
 - 科大讯飞-讯飞晓医：小程序搜索使用
 - https://www.clinfo.ai/
+- 阿里通义仁心：https://tongyi.aliyun.com/renxin
 
 #### 部署LLM
 
