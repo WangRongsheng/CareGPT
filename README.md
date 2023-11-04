@@ -815,6 +815,7 @@ python src/api_demo.py \
 - https://github.com/huang1332/finetune_dataset_maker
 - https://github.com/threeColorFr/LLMforDialogDataGenerate
 - https://github.com/alibaba/data-juicer
+- https://github.com/duanyu/LabelFast
 
 #### LLM资源
 
