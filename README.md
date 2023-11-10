@@ -834,6 +834,7 @@ python src/api_demo.py \
 - https://github.com/haotian-liu/LLaVA
 - https://github.com/kyegomez/Med-PaLM
 - https://github.com/williamliujl/Qilin-Med-VL
+- https://github.com/LLaVA-VL/LLaVA-Plus-Codebase
 
 #### LLM下载
 
