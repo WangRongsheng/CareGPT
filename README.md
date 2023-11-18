@@ -587,6 +587,7 @@ python src/api_demo.py \
 14. 大模型混合多种能力数据微调时呈现：高资源冲突，低资源增益，所以混合不同数据进行微调需要一定的工程技巧；
 15. 通常来说，lora与full-tuning有不可忽略的性能差异（如[LoRA results in 4-6% lower performance compared to full fine-tuning](https://github.com/huggingface/peft/issues/622)）；
 16. 7B系列模型请优先采用全参数微调方式，13B及以上参数模型可使用LoRA，QLoRA等方法；
+17. 超大参数模型即使被量化其能力依然能保持的较好；
 
 > [!IMPORTANT]
 > 欢迎大家在[ISSUE](https://github.com/WangRongsheng/CareLlama/issues/new)中补充新的经验！
