@@ -586,6 +586,7 @@ python src/api_demo.py \
 13. 训练数据要严格控制噪音：(1)预训练数据中如果出现少量连续的噪音数据，比如连续重复单词、非单词序列等，都可能造成特定维度的调整，从而使得模型整体PPL大幅度波动; (2)有监督微调指令中如果有大量与原有大语言模型不匹配的指令片段，也可能造成模型调整特定维度，从而使得模型整体性能大幅度下降;
 14. 大模型混合多种能力数据微调时呈现：高资源冲突，低资源增益，所以混合不同数据进行微调需要一定的工程技巧；
 15. 通常来说，lora与full-tuning有不可忽略的性能差异（如[LoRA results in 4-6% lower performance compared to full fine-tuning](https://github.com/huggingface/peft/issues/622)）；
+16. 7B系列模型请优先采用全参数微调方式，13B及以上参数模型可使用LoRA，QLoRA等方法；
 
 > [!IMPORTANT]
 > 欢迎大家在[ISSUE](https://github.com/WangRongsheng/CareLlama/issues/new)中补充新的经验！
