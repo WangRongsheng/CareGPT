@@ -768,6 +768,7 @@ python src/api_demo.py \
 - https://github.com/som-shahlab/Clinfo.AI
 - https://github.com/DUTIR-BioNLP/Taiyi-LLM
 - https://github.com/OptimalScale/LMFlow
+- https://huggingface.co/SYNLP/ChiMed-GPT-1.0
 
 #### 评测LLM
 
