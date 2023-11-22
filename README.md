@@ -687,7 +687,8 @@ python src/api_demo.py \
 
 # 🥂项目引用
 
-本工作由澳门理工大学应用科学学院硕士研究生王荣胜、周瑞哲、陈浩明完成，指导老师为檀韬副教授和王亚鹏副教授。
+- CareGPT(原名CareLlama) 为MPU的医疗大语言模型IvyGPT的分支，其存在意义是探索医疗数据、医疗LLM训练与部署相关的工作研究。
+- 本工作由澳门理工大学应用科学学院硕士研究生王荣胜、周瑞哲、陈浩明完成，指导老师为檀韬副教授和王亚鹏副教授。
 
 如果你使用了本项目的模型，数据或者代码，请声明以下引用：
 ```bib
@@ -719,11 +720,15 @@ python src/api_demo.py \
 }
 ```
 
-CareGPT(原名CareLlama) 为MPU的医疗大语言模型IvyGPT的分支，其存在意义是探索医疗数据、医疗LLM训练与部署相关的工作研究。
-
-本项目已被收录到[机器之心SOTA-CareGPT](https://sota.jiqizhixin.com/project/caregpt)。
-
-![](./assets/images/jqzx.jpg)
+<table>
+  <tr>
+    <td width= "300"><img src="./assets/images/jqzx.jpg" alt="Luotuo-Embedding" width="300"></td>
+    <td>
+      <h2><a href="https://sota.jiqizhixin.com/project/caregpt"> 机器之心SOTA </a></h2>
+      <p> 本项目已被收录到机器之心SOTA库，获得周热榜。 </p>
+    </td>
+  </tr>
+</table>
 
 # 🔔使用许可
 
