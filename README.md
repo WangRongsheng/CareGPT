@@ -10,10 +10,6 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/WangRongsheng/CareGPT">
-    <img src="./assets/images/caregpt.jpg" alt="Logo" height="280">
-  </a>
-
   <p align="center">
     <h3> CareGPT (关怀GPT)：医疗LLM，开源驱动，共创健康未来 </h3>
     <p align="center">
@@ -83,6 +79,12 @@
 9. 聚合了丰富的开源医学LLM、LLM训练的医学数据、LLM部署资料、LLM测评以及相关LLM的资源整理；
 10. 我们参与了医学LLM的[CMB榜单评测-IvyGPT](https://cmedbenchmark.llmzoo.com/static/leaderboard.html)，在测试中，我们领先ChatGPT及一众开源医学LLM；
 11. 我们基于自有数据集在不同基座LLM上训练开源了多个医疗LLM，您可以直接下载体验；
+
+<div align="center">
+  <a href="https://github.com/WangRongsheng/CareGPT">
+    <img src="./assets/images/caregpt.jpg" alt="Logo" height="280">
+  </a>
+</div>
 
 # 🎁数据集
 
