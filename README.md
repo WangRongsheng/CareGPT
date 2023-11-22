@@ -725,7 +725,7 @@ python src/api_demo.py \
     <td width= "300"><img src="./assets/images/jqzx.jpg" alt="机器之心" width="300"></td>
     <td>
       <h2><a href="https://sota.jiqizhixin.com/project/caregpt"> 机器之心SOTA </a></h2>
-      <p> 本项目已被收录到机器之心SOTA库，</br>获得周热榜。 </p>
+      <p> 本项目已被收录到机器之心SOTA库，获</br>得周热榜。 </p>
     </td>
   </tr>
 </table>
@@ -742,9 +742,9 @@ python src/api_demo.py \
 
 <table>
   <tr>
-    <td width= "300"><img src="./assets/images/baichuan.png" alt="Baichuan" width="300"></td>
+    <td width= "300"><img src="./assets/images/baichuan.jpg" alt="Baichuan" width="300"></td>
     <td>
-      <h2><a href="https://backdropbuild.com/v2"> AGI For Better </a></h2>
+      <h2><a href="https://www.baichuan-ai.com/"> AGI For Better </a></h2>
       <p> 本项目已参与百川智能携手亚马逊云科</br>技黑客松竞赛，获得全国总决赛季军。 </p>
     </td>
   </tr>
