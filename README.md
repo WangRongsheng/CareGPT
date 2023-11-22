@@ -3,9 +3,11 @@
 </p>
 <br>
 
-> **warning**
-> 
-> **CareGPT(原名CareLlama) 为MPU的医疗大语言模型IvyGPT的分支，其存在意义是探索医疗数据、医疗LLM训练与部署相关的工作研究。**
+<div align="center">
+  <a href="https://github.com/WangRongsheng/CareGPT">
+    <img src="./assets/images/caregpt-logo.png" alt="Logo" height="280">
+  </a>
+</div>
 
 <div align="center">
   <a href="https://github.com/WangRongsheng/CareGPT">
@@ -714,6 +716,8 @@ python src/api_demo.py \
   year = {2023}
 }
 ```
+
+CareGPT(原名CareLlama) 为MPU的医疗大语言模型IvyGPT的分支，其存在意义是探索医疗数据、医疗LLM训练与部署相关的工作研究。
 
 本项目已被收录到[机器之心SOTA-CareGPT](https://sota.jiqizhixin.com/project/caregpt)。
 
