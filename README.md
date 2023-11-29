@@ -94,6 +94,7 @@
 - [MedicalGPT/pretrain](https://github.com/shibing624/MedicalGPT/tree/main/data/pretrain)
 - [zysj](https://www.zysj.com.cn/)
 - [TCM-Ancient-Books](https://github.com/xiaopangxia/TCM-Ancient-Books) (近700项中医药古籍文本)
+- [epfl-llm/guidelines](https://huggingface.co/datasets/epfl-llm/guidelines)
 
 #### 监督训练数据
 - [icliniq-10k(en)](https://drive.google.com/file/d/1ZKbqgYqWc7DJHs3N9TQYQVPdDQmZaClA/view?usp=sharing)
