@@ -45,9 +45,9 @@
         <img src="https://img.shields.io/github/repo-size/WangRongsheng/CareLlama.svg?style=flat-square">
       </a>
       </br>
-      <a href=href="https://github.com/WangRongsheng/CareLlama">
+<!--       <a href=href="https://github.com/WangRongsheng/CareLlama">
         <img src="https://visitor-badge.laobi.icu/badge?page_id=https://github.com/WangRongsheng/CareLlama">
-      </a>
+      </a> -->
       <a href=href="https://github.com/WangRongsheng/CareLlama">
         <img src="https://img.shields.io/github/last-commit/WangRongsheng/CareLlama">
       </a>
