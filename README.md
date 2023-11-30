@@ -60,7 +60,7 @@
 <!--center><kbd><img src="./docs/images/usage.png" height="550px"/></kbd></center-->
 
 <p align="center">
-      <a href="#"><strong>视频教程</strong></a>
+      <a href="https://www.youtube.com/watch?v=ADVsEPbL9CQ"><strong>视频教程</strong></a>
       <a href="https://github.com/WangRongsheng/CareLlama/tree/main#5gradio%E9%83%A8%E7%BD%B2"><strong>安装部署</strong></a>
       <a href="https://huggingface.co/spaces/wangrongsheng/CareLlama"><strong>在线体验</strong></a>
 </p>
@@ -85,8 +85,6 @@
     <img src="./assets/images/caregpt.jpg" alt="Logo" height="280">
   </a>
 </div>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ADVsEPbL9CQ?si=5JDdDKEPCml090JP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # 🎁数据集
 
