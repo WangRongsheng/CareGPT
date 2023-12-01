@@ -804,6 +804,7 @@ python src/api_demo.py \
 - https://huggingface.co/SYNLP/ChiMed-GPT-1.0
 - https://github.com/AI-in-Health/DrugGPT
 - https://github.com/epfLLM/meditron
+- https://github.com/FreedomIntelligence/HuatuoGPT-II
 
 #### 评测LLM
 
