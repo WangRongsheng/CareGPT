@@ -126,6 +126,7 @@
 - [GenMedGPT-5k(en)](https://drive.google.com/file/d/1nDTKZ3wZbZWTkFMBkxlamrzbNz0frugg/view?usp=sharing)
 - [Alpaca-CoT(general)](https://huggingface.co/datasets/QingyiSi/Alpaca-CoT)
 - ✅[DISC-Med-SFT](https://huggingface.co/datasets/Flmc/DISC-Med-SFT)
+- ✅[Huatuo-26M](https://github.com/FreedomIntelligence/Huatuo-26M)
 
 #### 奖励训练数据
 
