@@ -809,6 +809,7 @@ python src/api_demo.py \
 #### 评测LLM
 
 - https://github.com/FreedomIntelligence/CMB
+- https://github.com/MaksymPetyak/medplexity
 
 #### 体验LLM
 
