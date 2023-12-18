@@ -602,6 +602,7 @@ python src/api_demo.py \
 23. 如果要结合 LoRA，确保它在所有层上应用，而不仅仅是 Key 和 Value 矩阵中，这样才能最大限度地提升模型的性能；
 24. 调整 LoRA rank 和选择合适的 α 值至关重要。提供一个小技巧，试试把 α 值设置成 rank 值的两倍；
 25. 14GB RAM 的单个 GPU 能够在几个小时内高效地微调参数规模达 70 亿的大模型。对于静态数据集，想要让 LLM 强化成「全能选手」，在所有基线任务中都表现优异是不可能完成的。想要解决这个问题需要多样化的数据源，或者使用 LoRA 以外的技术；
+26. 根据NeurIPS workshop的建议，截止2023年12月18日，微调模型建议选型为`英文10B以下选择Mistral-7B中文`, `10B以下选择Yi-6B`, `10B以上选择Qwen-14B和Yi-34B`；
 
 > [!IMPORTANT]
 > 欢迎大家在[ISSUE](https://github.com/WangRongsheng/CareLlama/issues/new)中补充新的经验！
