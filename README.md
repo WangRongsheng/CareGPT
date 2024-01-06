@@ -822,6 +822,7 @@ python src/api_demo.py \
 
 - https://github.com/FreedomIntelligence/CMB
 - https://github.com/MaksymPetyak/medplexity
+- https://github.com/MediaBrain-SJTU/GenMedicalEval
 
 #### 体验LLM
 
