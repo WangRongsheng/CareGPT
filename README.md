@@ -817,6 +817,7 @@ python src/api_demo.py \
 - https://github.com/AI-in-Health/DrugGPT
 - https://github.com/epfLLM/meditron
 - https://github.com/FreedomIntelligence/HuatuoGPT-II
+- https://github.com/baiyang2464/chatbot-base-on-Knowledge-Graph
 
 #### 评测LLM
 
