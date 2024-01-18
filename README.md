@@ -242,6 +242,11 @@ Machine learning algorithms build a model based on sample data, known as trainin
 
 ### 配置分布式
 
+查看你的显卡是否是NVLINK连接，NVLINK链接才能有效使用`accelerate`进行有效并行加速训练。
+```
+nvidia-smi topo -m
+```
+
 ```python
 accelerate config # configure the environment
 accelerate launch src/train_bash.py # arguments (same as above)
