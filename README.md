@@ -127,6 +127,7 @@
 - [Alpaca-CoT(general)](https://huggingface.co/datasets/QingyiSi/Alpaca-CoT)
 - ✅[DISC-Med-SFT](https://huggingface.co/datasets/Flmc/DISC-Med-SFT)
 - ✅[HuatuoGPT2_sft_instruct](https://huggingface.co/datasets/FreedomIntelligence/HuatuoGPT2_sft_instruct_GPT4_50K)
+- [FreedomIntelligence/Medbase_data](https://huggingface.co/datasets/FreedomIntelligence/Medbase_data)
 
 #### 奖励训练数据
 
@@ -823,6 +824,7 @@ python src/api_demo.py \
 - https://github.com/epfLLM/meditron
 - https://github.com/FreedomIntelligence/HuatuoGPT-II
 - https://github.com/baiyang2464/chatbot-base-on-Knowledge-Graph
+- https://huggingface.co/BioMistral/BioMistral-7B
 
 #### 评测LLM
 
