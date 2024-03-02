@@ -845,6 +845,7 @@ python src/api_demo.py \
 - 科大讯飞-讯飞晓医：小程序搜索使用
 - https://www.clinfo.ai/
 - 阿里通义仁心：https://tongyi.aliyun.com/renxin
+- https://ai.zuoshouyisheng.com/publicize/home
 
 #### 部署LLM
 
