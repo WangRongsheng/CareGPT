@@ -827,6 +827,7 @@ python src/api_demo.py \
 - https://huggingface.co/BioMistral/BioMistral-7B
 - https://github.com/MAGIC-AI4Med/MMedLM
 - https://huggingface.co/stanford-crfm/BioMedLM
+- https://github.com/BIDS-Xu-Lab/Me-LLaMA
 
 #### 评测LLM
 
