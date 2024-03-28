@@ -826,6 +826,7 @@ python src/api_demo.py \
 - https://github.com/baiyang2464/chatbot-base-on-Knowledge-Graph
 - https://huggingface.co/BioMistral/BioMistral-7B
 - https://github.com/MAGIC-AI4Med/MMedLM
+- https://huggingface.co/stanford-crfm/BioMedLM
 
 #### 评测LLM
 
