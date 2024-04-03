@@ -128,6 +128,7 @@
 - ✅[DISC-Med-SFT](https://huggingface.co/datasets/Flmc/DISC-Med-SFT)
 - ✅[HuatuoGPT2_sft_instruct](https://huggingface.co/datasets/FreedomIntelligence/HuatuoGPT2_sft_instruct_GPT4_50K)
 - [FreedomIntelligence/Medbase_data](https://huggingface.co/datasets/FreedomIntelligence/Medbase_data)
+- [openmedlab/Awesome-Medical-Dataset](https://github.com/openmedlab/Awesome-Medical-Dataset)
 
 #### 奖励训练数据
 
