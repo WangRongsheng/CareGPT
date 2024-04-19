@@ -837,6 +837,7 @@ python src/api_demo.py \
 - https://github.com/MediaBrain-SJTU/GenMedicalEval
 - https://github.com/medhalt/medhalt
 - https://medbench.opencompass.org.cn/leaderboard
+- https://huggingface.co/spaces/openlifescienceai/open_medical_llm_leaderboard
 
 #### 体验LLM
 
