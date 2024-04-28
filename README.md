@@ -898,6 +898,7 @@ python src/api_demo.py \
 - https://github.com/LearnPrompt/LLMs-cookbook
 - https://github.com/liucongg/ChatGPTBook
 - https://github.com/EvilPsyCHo/train_custom_LLM
+- https://github.com/YutingHe-list/Awesome-Foundation-Models-for-Advancing-Healthcare
 
 #### LLM多模态
 
