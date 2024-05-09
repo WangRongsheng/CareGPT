@@ -908,6 +908,7 @@ python src/api_demo.py \
 - https://github.com/williamliujl/Qilin-Med-VL
 - https://github.com/LLaVA-VL/LLaVA-Plus-Codebase
 - https://github.com/Yuliang-Liu/Monkey
+- https://github.com/BUAADreamer/Chinese-LLaVA-Med
 
 #### LLM下载
 
